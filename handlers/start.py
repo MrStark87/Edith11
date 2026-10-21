@@ -142,8 +142,7 @@ def register_handlers(app: Client):
         await message.reply_photo(
             START_IMAGE,
             caption=(
-                "<emoji id=5231102735817918643>👇</emoji> <b> 𝖼𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗍𝗈 𝗀𝖾𝗍 𝗆𝗒 𝗁𝖾𝗅𝗉 𝗆𝖾𝗇𝗎 𝗂𝗇 𝗒𝗈𝗎𝗋 𝗉𝗆</b>.
-                "
+                "<emoji id=5231102735817918643>👇</emoji> <b> 𝖼𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗍𝗈 𝗀𝖾𝗍 𝗆𝗒 𝗁𝖾𝗅𝗉 𝗆𝖾𝗇𝗎 𝗂𝗇 𝗒𝗈𝗎𝗋 𝗉𝗆</b>."
             ),
             reply_markup=buttons,
             parse_mode=enums.ParseMode.HTML,
@@ -163,9 +162,9 @@ def register_handlers(app: Client):
         await message.reply_photo(
             START_IMAGE,
             caption=(
-                "<emoji id=5440431182602842059>👋</emoji> 𝗵𝗲𝘆! 𝗶'𝗺 𝗘𝗱𝗶𝘁𝗵\n"
-                "❍ 𝘆𝗼𝘂𝗿 𝘀𝗺𝗮𝗿𝘁 𝗴𝗿𝗼𝘂𝗽 𝗺𝗮𝗻𝗮𝗴𝗲𝗿 𝗯𝗼𝘁.\n\n"
-                "➻ 𝗮𝗱𝗱 𝗺𝗲 𝘁𝗼 𝘆𝗼𝘂𝗿 𝗴𝗿𝗼𝘂𝗽 & 𝗸𝗲𝗲𝗽 𝗶𝘁 𝘀𝗮𝗳𝗲 <emoji id=5017108172138087141>🛡️</emoji>"
+                "<emoji id=5440431182602842059>👋</emoji> 𝖧𝖾𝗒! 𝖨'𝗆 𝖤𝖽𝗂𝗍𝗁 𝖲𝖾𝖼𝗎𝗋𝗂𝗍𝗒 𝖡𝗈𝗍 🤖\\n"
+                "❍ 𝖸𝗈𝗎𝗋 𝗌𝗆𝖺𝗋𝗍 𝗀𝗋𝗈𝗎𝗉 𝗆𝖺𝗇𝖺𝗀𝖾𝗋 𝖻𝗈𝗍.\\n\\n"
+                "➻ 𝖠𝖽𝖽 𝗆𝖾 𝗍𝗈 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉 & 𝗄𝖾𝖾𝗉 𝗂𝗍 𝗌𝖺𝖿𝖾. <emoji id=5017108172138087141>🛡️</emoji>"
             ),
             reply_markup=buttons,
             parse_mode=enums.ParseMode.HTML,
@@ -184,11 +183,11 @@ def register_handlers(app: Client):
         await message.reply_photo(
             PRIVACY_IMAGE,
             caption=(
-                ' <emoji id=5956561916573782596>📄</emoji> 𝗣𝗿𝗶𝘃𝗮𝗰𝘆 𝗣𝗼𝗹𝗶𝗰𝘆 𝗳𝗼𝗿 - <a href="https://t.me/EdithHelpsBot">𝗘𝗗𝗜𝗧𝗛 !</a>'
+                '<blockquote expandable> <emoji id=5956561916573782596>📄</emoji> 𝗣𝗿𝗶𝘃𝗮𝗰𝘆 𝗣𝗼𝗹𝗶𝗰𝘆 𝗳𝗼𝗿 - <a href="https://t.me/EdithHelpsBot">𝖤𝖽𝗂𝗍𝗁 𝖲𝖾𝖼𝗎𝗋𝗂𝗍𝗒 𝖡𝗈𝗍 🤖</a></blockquote>'
                 "\n"
-                '𝗬𝗼𝘂𝗿 𝗽𝗿𝗶𝘃𝗮𝗰𝘆 𝗶𝘀 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝘁𝗼 𝘂𝘀. 𝗧𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲 𝗮𝗯𝗼𝘂𝘁 𝗵𝗼𝘄 𝘄𝗲 𝗰𝗼𝗹𝗹𝗲𝗰𝘁, 𝘂𝘀𝗲, 𝗮𝗻𝗱 𝗽𝗿𝗼𝘁𝗲𝗰𝘁 𝘆𝗼𝘂𝗿 𝗱𝗮𝘁𝗮, 𝗽𝗹𝗲𝗮𝘀𝗲 𝗿𝗲𝘃𝗶𝗲𝘄 𝗼𝘂𝗿 <a href="https://graph.org/Anya-Bots---Privacy-Policy-04-12">𝗣𝗿𝗶𝘃𝗮𝗰𝘆 𝗣𝗼𝗹𝗶𝗰𝘆</a>.'
+                '𝖸𝗈𝗎𝗋 𝗉𝗋𝗂𝗏𝖺𝖼𝗒 𝗂𝗌 𝗂𝗆𝗉𝗈𝗋𝗍𝖺𝗇𝗍 𝗍𝗈 𝗎𝗌. 𝖳𝗈 𝗅𝖾𝖺𝗋𝗇 𝗆𝗈𝗋𝖾 𝖺𝖻𝗈𝗎𝗍 𝗁𝗈𝗐 𝗐𝖾 𝖼𝗈𝗅𝗅𝖾𝖼𝗍, 𝗎𝗌𝖾, 𝖺𝗇𝖽 𝗉𝗋𝗈𝗍𝖾𝖼𝗍 𝗒𝗈𝗎𝗋 𝖽𝖺𝗍𝖺, 𝗉𝗅𝖾𝖺𝗌𝖾 𝗋𝖾𝗏𝗂𝖾𝗐 𝗈𝗎𝗋<a href="https://graph.org/Anya-Bots---Privacy-Policy-04-12">𝗣𝗿𝗶𝘃𝗮𝗰𝘆 𝗣𝗼𝗹𝗶𝗰𝘆</a>.'
                 "\n"
-                '𝗜𝗳 𝘆𝗼𝘂 𝗵𝗮𝘃𝗲 𝗮𝗻𝘆 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀 𝗼𝗿 𝗰𝗼𝗻𝗰𝗲𝗿𝗻𝘀, 𝗳𝗲𝗲𝗹 𝗳𝗿𝗲𝗲 𝘁𝗼 𝗿𝗲𝗮𝗰𝗵 𝗼𝘂𝘁 𝘁𝗼 𝗼𝘂𝗿 <a href="https://t.me/CarelessxWorld">𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝘁𝗲𝗮𝗺</a>.'
+                '𝖨𝖿 𝗒𝗈𝗎 𝗁𝖺𝗏𝖾 𝖺𝗇𝗒 𝗊𝗎𝖾𝗌𝗍𝗂𝗈𝗇𝗌 𝗈𝗋 𝖼𝗈𝗇𝖼𝖾𝗋𝗇𝗌, 𝖿𝖾𝖾𝗅 𝖿𝗋𝖾𝖾 𝗍𝗈 𝗋𝖾𝖺𝖼𝗁 𝗈𝗎𝗍 𝗍𝗈 𝗈𝗎𝗋 <a href="https://t.me/CarelessxWorld">𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝘁𝗲𝗮𝗺</a>.'
             ),
             reply_markup=buttons,
             parse_mode=enums.ParseMode.HTML
@@ -215,55 +214,56 @@ def register_handlers(app: Client):
     # ==========================================================
 
     CATEGORY_MODERATION = [
-        ("🔮 ᴍᴏᴅʀᴀᴛɪᴏɴ ⌯",     "moderation"),
-        ("⚠️ ᴡᴀʀɴꜱ ⌯",           "warns_help"),
-        ("🚷 ʙʟ ᴜꜱᴇʀ ⌯",      "blackuser_help"),
-        ("🚫 ʙʟ ᴡᴏʀᴅꜱ ⌯",      "blacklist_help"),
-        ("🤬 ᴀʙᴜꜱᴇ ⌯",           "abuse_help"),
-        ("🗑️ ᴄᴍᴅ ᴅᴇʟ ⌯",        "cmd_help"),
-        ("🚮 ᴍᴇᴅɪᴀ ᴅᴇʟ ⌯",      "mediadelete_help"),
-        ("🆘 ᴀᴅᴍɪɴ ⌯",           "admin_tag_help"),
-        ("👮🏻 ᴘʀᴏᴍᴏᴛɪᴏɴ ⌯",     "promote_help"),
-        ("⌛ ʟᴏɴɢ ʟɪᴍɪᴛ ⌯",     "longmsg_help"),
-        ("#️⃣ ʜᴀꜱʜᴛᴀɢ ⌯",        "hashtag_help"),
+        ("🔮 𝖬𝗈𝖽𝗋𝖺𝗍𝗂𝗈𝗇 ⌯",     "moderation"),
+        ("⚠️ 𝖶𝖺𝗋𝗇𝗌 ⌯",             "warns_help"),
+        ("🚷 𝖡𝗅 𝖴𝗌𝖾𝗋 ⌯",           "blackuser_help"),
+        ("🚫 𝖡𝗅 𝖶𝗈𝗋𝖽𝗌 ⌯",          "blacklist_help"),
+        ("🤬 𝖠𝖻𝗎𝗌𝖾 ⌯",              "abuse_help"),
+        ("🗑️ 𝖢𝗆𝖽 𝖣𝖾𝗅 ⌯",           "cmd_help"),
+        ("🚮 𝖬𝖾𝖽𝗂𝖺 𝖣𝖾𝗅 ⌯",         "mediadelete_help"),
+        ("🆘 𝖠𝖽𝗆𝗂𝗇 ⌯",              "admin_tag_help"),
+        ("👮🏻 𝖯𝗋𝗈𝗆𝗈𝗍𝗂𝗈𝗇 ⌯",        "promote_help"),
+        ("⌛ 𝖫𝗈𝗇𝗀 𝖫𝗂𝗆𝗂𝗍 ⌯",        "longmsg_help"),
+        ("#️⃣ 𝖧𝖺𝗌𝗁𝗍𝖺𝗀 ⌯",           "hashtag_help"),
     ]
 
     CATEGORY_SECURITY = [
-        ("🔐 ʟᴏᴄᴋꜱ ⌯",          "locks"),
-        ("🕐 ᴀᴜᴛᴏ ʟᴏᴄᴋ", "autolock_help"),
-        ("🔡 ᴄᴀᴘᴛᴄʜᴀ ⌯",          "captcha_help"),
-        ("〽️ ʙɪᴏ ʟɪɴᴋ ⌯",       "biolink"),
-        ("🔗 ᴀɴᴛɪ ʟɪɴᴋ ⌯", "anti_link_help"),
-        ("🪠 ꜰ-ꜱᴜʙ ⌯",           "fsub_help"),
-        ("🧴 ᴄʟᴇᴀɴᴇʀ ⌯",         "cleaner_help"),
-        ("📵 ᴘʜᴏɴᴇ ⌯",           "phone_help"),
-        ("🎭 ᴀɴᴛɪ ꜱᴛɪᴄᴋᴇʀ ⌯",    "anti_sticker_help"),
-        ("🧟 ᴢᴏᴍʙɪᴇꜱ ⌯",         "zombie_help"),
-        ("👻 ɢʜᴏꜱᴛ ⌯",           "ghost_help"),
-        ("🤿 ꜰɪʟᴛᴇʀꜱ ⌯",         "filters_help"),
-        ("⛩️ ᴊᴏɪɴ ʀᴇǫᴜᴇꜱᴛ ⌯",  "joinrequest_help"),
-        ("🛡️ ᴀɴᴛɪ ʀᴀɪᴅ ⌯",      "antiraid_help"),
-        ("🌊 ᴀɴᴛɪ ꜰʟᴏᴏᴅ ⌯",      "antiflood_help"),
-        ("⚙️ ᴅɪꜱᴀʙʟᴇ", "disable_help"),
-        ("🪭 ꜰᴀɴᴄʏ ᴛᴇxᴛ ⌯",       "fancy_text_help"),
+        ("🔐 𝖫𝗈𝖼𝗄𝗌 ⌯",             "locks"),
+        ("🕐 𝖠𝗎𝗍𝗈 𝖫𝗈𝖼𝗄",             "autolock_help"),
+        ("🔡 𝖢𝖺𝗉𝗍𝖼𝗁𝖺 ⌯",            "captcha_help"),
+        ("〽️ 𝖡𝗂𝗈 𝖫𝗂𝗇𝗄 ⌯",           "biolink"),
+        ("🔗 𝖠𝗇𝗍𝗂 𝖫𝗂𝗇𝗄 ⌯",          "anti_link_help"),
+        ("🪠 𝖥-𝖲𝗎𝖻 ⌯",               "fsub_help"),
+        ("🧴 𝖢𝗅𝖾𝖺𝗇𝖾𝗋 ⌯",            "cleaner_help"),
+        ("📵 𝖯𝗁𝗈𝗇𝖾 ⌯",               "phone_help"),
+        ("🎭 𝖠𝗇𝗍𝗂 𝖲𝗍𝗂𝖼𝗄𝖾𝗋 ⌯",      "anti_sticker_help"),
+        ("🧟 𝖹𝗈𝗆𝖻𝗂𝖾𝗌 ⌯",            "zombie_help"),
+        ("👻 𝖦𝗁𝗈𝗌𝗍 ⌯",               "ghost_help"),
+        ("🤿 𝖥𝗂𝗅𝗍𝖾𝗋𝗌 ⌯",             "filters_help"),
+        ("⛩️ 𝖩𝗈𝗂𝗇 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 ⌯",      "joinrequest_help"),
+        ("🛡️ 𝖠𝗇𝗍𝗂 𝖱𝖺𝗂𝖽 ⌯",          "antiraid_help"),
+        ("🌊 𝖠𝗇𝗍𝗂 𝖥𝗅𝗈𝗈𝖽 ⌯",         "antiflood_help"),
+        ("⚙️ 𝖣𝗂𝗌𝖺𝖻𝗅𝖾",               "disable_help"),
+        ("🪭 𝖥𝖺𝗇𝖼𝗒 𝖳𝖾𝗑𝗍 ⌯",         "fancy_text_help"),
     ]
-
+    
     CATEGORY_UTILITY = [
-        ("💌 ɢʀᴇᴇᴛɪɴɢꜱ ⌯",    "greetings"),
-        ("📝 ɴᴏᴛᴇꜱ ⌯",           "notes_help"),
-        ("📑 ʀᴜʟᴇꜱ ⌯",           "rules_help"),
-        ("⚙️ ᴜᴛɪʟɪᴛʏ ⌯",         "utility_help"),
-        ("🔖 ᴛᴀɢ ᴀʟʟ ⌯",         "tagall_help"),
-        ("🕊 ᴀᴘᴘʀᴏᴠᴇ", "approve_help"),
-        ("📤 ꜰᴏʀᴡᴀʀᴅ ⌯",           "forward_help"),
-        ("🤖 ᴇᴅɪᴛʜ ᴀɪ ⌯",        "ai_help"),
+        ("💌 𝖦𝗋𝖾𝖾𝗍𝗂𝗇𝗀𝗌 ⌯",     "greetings"),
+        ("📝 𝖭𝗈𝗍𝖾𝗌 ⌯",              "notes_help"),
+        ("📑 𝖱𝗎𝗅𝖾𝗌 ⌯",              "rules_help"),
+        ("⚙️ 𝖴𝗍𝗂𝗅𝗂𝗍𝗒 ⌯",           "utility_help"),
+        ("🔖 𝖳𝖺𝗀 𝖠𝗅𝗅 ⌯",            "tagall_help"),
+        ("🕊 𝖠𝗉𝗉𝗋𝗈𝗏𝖾",              "approve_help"),
+        ("📤 𝖥𝗈𝗋𝗐𝖺𝗋𝖽 ⌯",            "forward_help"),
+        ("🤖 𝖤𝖽𝗂𝗍𝗁 𝖠𝖨 ⌯",           "ai_help"),
     ]
 
+    
     CATEGORY_GROUPS = [
-        ("👥 ɢʀᴏᴜᴘ ⌯", "groupinfo_help"),
-        ("🔗 ɪɴᴠɪᴛᴇ ʟɪɴᴋ ⌯",    "linkinfo_help"),
+        ("👥 𝖦𝗋𝗈𝗎𝗉 ⌯",          "groupinfo_help"),
+        ("🔗 𝖨𝗇𝗏𝗂𝗍𝖾 𝖫𝗂𝗇𝗄 ⌯",    "linkinfo_help"),
     ]
-
+    
     ECO_CATEGORIES = {
         "moderation": CATEGORY_MODERATION,
         "security": CATEGORY_SECURITY,
@@ -276,9 +276,9 @@ def register_handlers(app: Client):
 
     def build_category_menu():
         text = (
-            "❖ 𝗰𝗵𝗼𝗼𝘀𝗲 𝘁𝗵𝗲 𝗰𝗮𝘁𝗲𝗴𝗼𝗿𝘆 𝗳𝗼𝗿 𝘄𝗵𝗶𝗰𝗵 𝘆𝗼𝘂 𝘄𝗮𝗻𝗻𝗮 𝗴𝗲𝘁 𝗵𝗲𝗹𝗽\n\n"
-            "➥ 𝗮𝘀𝗸 𝘆𝗼𝘂𝗿 𝗱𝗼𝘂𝗯𝘁𝘀 𝗮𝘁 <a href='https://t.me/CarelessxWorld'>𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝗰𝗵𝗮𝘁</a>\n"
-            "𝗮𝗹𝗹 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱 𝘄𝗶𝘁𝗵 :<code>/</code>"
+            "❖ 𝖢𝗁𝗈𝗈𝗌𝖾 𝗍𝗁𝖾 𝖼𝖺𝗍𝖾𝗀𝗈𝗋𝗒 𝖿𝗈𝗋 𝗐𝗁𝗂𝖼𝗁 𝗒𝗈𝗎 𝗐𝖺𝗇𝗇𝖺 𝗀𝖾𝗍 𝗁𝖾𝗅𝗉\n\n"
+            "➥ 𝖠𝗌𝗄 𝗒𝗈𝗎𝗋 𝖽𝗈𝗎𝖻𝗍𝗌 𝖺𝗍 <a href='https://t.me/CarelessxWorld'>𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖢𝗁𝖺𝗍</a>\n"
+            "𝖠𝗅𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌 𝖼𝖺𝗇 𝖻𝖾 𝗎𝗌𝖾𝖽 𝗐𝗂𝗍𝗁 :<code>/</code>"
         )
         rows = [
             [
