@@ -611,17 +611,17 @@ def register_handlers(app: Client):
     @app.on_callback_query(filters.regex(r"^utility_help\|(\w+)\|(\d+)$"))
     async def utility_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
-        text =
-        f"<blockquote>⚙️ <b>𝖴𝗍𝗂𝗅𝗂𝗍𝗒</b></blockquote>\n\n"
-        f"➻ <code>/chatinfo</code> — <i>𝖦𝗋𝗈𝗎𝗉 𝖽𝖾𝗍𝖺𝗂𝗅𝗌 &amp; 𝗆𝖾𝗆𝖻𝖾𝗋 𝖼𝗈𝗎𝗇𝗍</i>\n"
-        f"➻ <code>/id</code> — <i>𝖸𝗈𝗎𝗋 𝖨𝖣 𝗈𝗋 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗎𝗌𝖾𝗋'𝗌 𝖨𝖣</i>\n"
-        f"➻ <code>/pin [silent]</code> — <i>𝖯𝗂𝗇 𝖺 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
-        f"➻ <code>/unpin</code> — <i>𝖴𝗇𝗉𝗂𝗇 𝗆𝖾𝗌𝗌𝖺𝗀𝖾 𝗈𝗋 𝖺𝗅𝗅 𝗉𝗂𝗇𝗌</i>\n"
-        f"➻ <code>/purge</code> — <i>𝖡𝗎𝗅𝗄 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌</i>\n"
-        f"➻ <code>/del</code> — <i>𝖣𝖾𝗅𝖾𝗍𝖾 𝖺 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
-        f"➻ <code>/report</code> — <i>𝖱𝖾𝗉𝗈𝗋𝗍 𝖺 𝗎𝗌𝖾𝗋 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇𝗌</i>\n"
-        f"➻ <code>/calc &lt;expr&gt;</code> — <i>𝖢𝖺𝗅𝖼𝗎𝗅𝖺𝗍𝗈𝗋</i>\n\n"
-        f"<i>𝖯𝗂𝗇, 𝗉𝗎𝗋𝗀𝖾, 𝖽𝖾𝗅 — 𝖠𝖽𝗆𝗂𝗇 𝗈𝗇𝗅𝗒</i>"
+        text =(
+            f"<blockquote>⚙️ <b>𝖴𝗍𝗂𝗅𝗂𝗍𝗒</b></blockquote>\n\n"
+            f"➻ <code>/chatinfo</code> — <i>𝖦𝗋𝗈𝗎𝗉 𝖽𝖾𝗍𝖺𝗂𝗅𝗌 &amp; 𝗆𝖾𝗆𝖻𝖾𝗋 𝖼𝗈𝗎𝗇𝗍</i>\n"
+            f"➻ <code>/id</code> — <i>𝖸𝗈𝗎𝗋 𝖨𝖣 𝗈𝗋 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗎𝗌𝖾𝗋'𝗌 𝖨𝖣</i>\n"
+            f"➻ <code>/pin [silent]</code> — <i>𝖯𝗂𝗇 𝖺 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
+            f"➻ <code>/unpin</code> — <i>𝖴𝗇𝗉𝗂𝗇 𝗆𝖾𝗌𝗌𝖺𝗀𝖾 𝗈𝗋 𝖺𝗅𝗅 𝗉𝗂𝗇𝗌</i>\n"
+            f"➻ <code>/purge</code> — <i>𝖡𝗎𝗅𝗄 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌</i>\n"
+            f"➻ <code>/del</code> — <i>𝖣𝖾𝗅𝖾𝗍𝖾 𝖺 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
+            f"➻ <code>/report</code> — <i>𝖱𝖾𝗉𝗈𝗋𝗍 𝖺 𝗎𝗌𝖾𝗋 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇𝗌</i>\n"
+            f"➻ <code>/calc &lt;expr&gt;</code> — <i>𝖢𝖺𝗅𝖼𝗎𝗅𝖺𝗍𝗈𝗋</i>\n\n"
+            f"<i>𝖯𝗂𝗇, 𝗉𝗎𝗋𝗀𝖾, 𝖽𝖾𝗅 — 𝖠𝖽𝗆𝗂𝗇 𝗈𝗇𝗅𝗒</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
