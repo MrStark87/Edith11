@@ -26,7 +26,7 @@ def register_handlers(app: Client):
             f"<b>➣ <u>𝖨 𝖼𝖺𝗇 𝗁𝖾𝗅𝗉 𝗒𝗈𝗎 𝗐𝗂𝗍𝗁:</u></b>\n"
             f"<blockquote expandable><b>⦸ 𝖠𝗇𝗍𝗂 𝖠𝖻𝗎𝗌𝖾 & 𝖠𝗇𝗍𝗂 𝖱𝖺𝗂𝖽.</b>\n\n"
             f"<b>♧ 𝖡𝗂𝗈𝗅𝗂𝗇𝗄 𝖯𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇 & 𝖫𝗂𝗇𝗄 𝖯𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇.</b>\n\n"
-            f"<b>♙ 𝖦𝗋𝗈𝗎𝗉 𝖫𝗈𝖼𝗄, 𝖡𝗎𝗅𝗄 𝖯𝗎𝗋𝗀𝗂𝗇𝗀, 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 𝖣𝖾𝗅𝖾𝗍𝖾</b></blockquote>\n"
+            f"<b>♙ 𝖦𝗋𝗈𝗎𝗉 𝖫𝗈𝖼𝗄, 𝖡𝗎𝗅𝗄 𝖯𝗎𝗋𝗀𝗂𝗇𝗀, 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 𝖣𝖾𝗅𝖾𝗍𝖾</b></blockquote>\n\n"
             f"<b>⇩</b> 𝖭𝖾𝖾𝖽 𝖧𝖾𝗅𝗉? 𝖴𝗌𝖾 𝗍𝗁𝖾 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗈𝗋 𝗌𝖾𝗇𝖽 /help"
         )
         buttons = InlineKeyboardMarkup([
