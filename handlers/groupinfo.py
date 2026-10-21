@@ -17,21 +17,19 @@ logger = logging.getLogger(__name__)
 # Help Text
 # ============================================================
 GROUPS_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "   👥 𝗴𝗿𝗼𝘂𝗽 𝗶𝗱𝗲𝗻𝘁𝗶𝘁𝘆\n"
-    "╚══════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /setname {𝘁𝗲𝘅𝘁} — 𝘀𝗲𝘁/𝗰𝗵𝗮𝗻𝗴𝗲 𝗴𝗿𝗼𝘂𝗽 𝗻𝗮𝗺𝗲\n"
-    "➻ /setbio {𝘁𝗲𝘅𝘁} — 𝘀𝗲𝘁/𝗰𝗵𝗮𝗻𝗴𝗲 𝗴𝗿𝗼𝘂𝗽 𝗱𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻\n"
-    "➻ /groupinfo — 𝘀𝗵𝗼𝘄 𝗴𝗿𝗼𝘂𝗽 𝗶𝗱, 𝗼𝘄𝗻𝗲𝗿, 𝗺𝗲𝗺𝗯𝗲𝗿 𝘀𝘁𝗮𝘁𝘀\n"
-    "➻ /setdp — 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝗮𝗻 𝗶𝗺𝗮𝗴𝗲 𝘁𝗼 𝘀𝗲𝘁 𝗶𝘁 𝗮𝘀 𝗴𝗿𝗼𝘂𝗽 𝗱𝗽\n"
-    "   (𝗮𝗹𝗶𝗮𝘀𝗲𝘀: /setpfp, /setimage)\n"
-    "➻ /link — 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲 𝗮 𝗻𝗲𝘄 𝗶𝗻𝘃𝗶𝘁𝗲 𝗹𝗶𝗻𝗸\n"
-    "   (𝗮𝗹𝗶𝗮𝘀𝗲𝘀: /givelink, /invitelink)\n\n"
-    "❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-    "➻ 𝗮𝗱𝗺𝗶𝗻 𝗼𝗻𝗹𝘆\n"
-    "➻ 𝗯𝗼𝘁 𝗺𝘂𝘀𝘁 𝗯𝗲 𝗮𝗱𝗺𝗶𝗻 𝘄𝗶𝘁𝗵 '𝗰𝗵𝗮𝗻𝗴𝗲 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗳𝗼' / '𝗶𝗻𝘃𝗶𝘁𝗲 𝘂𝘀𝗲𝗿𝘀' 𝗿𝗶𝗴𝗵𝘁\n"
-    "➻ 𝗴𝗿𝗼𝘂𝗽 𝗼𝗻𝗹𝘆, 𝘄𝗼𝗻'𝘁 𝘄𝗼𝗿𝗸 𝗶𝗻 𝗽𝗺"
+    f"<blockquote>👥 <b>𝖦𝗋𝗈𝗎𝗉 𝖨𝖽𝖾𝗇𝗍𝗂𝗍𝗒</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/setname { '{text}' }</code> — 𝖲𝖾𝗍/𝖢𝗁𝖺𝗇𝗀𝖾 𝖦𝗋𝗈𝗎𝗉 𝖭𝖺𝗆𝖾\n"
+    f"➻ <code>/setbio { '{text}' }</code> — 𝖲𝖾𝗍/𝖢𝗁𝖺𝗇𝗀𝖾 𝖦𝗋𝗈𝗎𝗉 𝖣𝖾𝗌𝖼𝗋𝗂𝗉𝗍𝗂𝗈𝗇\n"
+    f"➻ <code>/groupinfo</code> — 𝖲𝗁𝗈𝗐 𝖦𝗋𝗈𝗎𝗉 𝖨𝖣, 𝖮𝗐𝗇𝖾𝗋, 𝖬𝖾𝗆𝖻𝖾𝗋 𝖲𝗍𝖺𝗍𝗌\n"
+    f"➻ <code>/setdp</code> — 𝖱𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺𝗇 𝗂𝗆𝖺𝗀𝖾 𝗍𝗈 𝗌𝖾𝗍 𝖦𝗋𝗈𝗎𝗉 𝖣𝖯\n"
+    f"   (𝖠𝗅𝗂𝖺𝗌𝖾𝗌: /setpfp, /setimage)\n"
+    f"➻ <code>/link</code> — 𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝖺 𝖭𝖾𝗐 𝖨𝗇𝗏𝗂𝗍𝖾 𝖫𝗂𝗇𝗄\n"
+    f"   (𝖠𝗅𝗂𝖺𝗌𝖾𝗌: /givelink, /invitelink)\n\n"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖠𝖽𝗆𝗂𝗇 𝖮𝗇𝗅𝗒\n"
+    f"➻ 𝖡𝗈𝗍 𝖬𝗎𝗌𝗍 𝖡𝖾 𝖠𝖽𝗆𝗂𝗇 𝖶𝗂𝗍𝗁 '𝖢𝗁𝖺𝗇𝗀𝖾 𝖦𝗋𝗈𝗎𝗉 𝖨𝗇𝖿𝗈' / '𝖨𝗇𝗏𝗂𝗍𝖾 𝖴𝗌𝖾𝗋𝗌' 𝖱𝗂𝗀𝗁𝗍\n"
+    f"➻ 𝖦𝗋𝗈𝗎𝗉 𝖮𝗇𝗅𝗒, 𝖶𝗈𝗇'𝗍 𝖶𝗈𝗋𝗄 𝖨𝗇 𝖯𝖬"
 )
 
 
@@ -39,19 +37,16 @@ GROUPS_HELP_TEXT = (
 # Help Text — Invite Link
 # ============================================================
 LINK_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "   🔗 𝗶𝗻𝘃𝗶𝘁𝗲 𝗹𝗶𝗻𝗸\n"
-    "╚══════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /link — 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲 𝗮 𝗯𝗿𝗮𝗻𝗱 𝗻𝗲𝘄 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝘃𝗶𝘁𝗲 𝗹𝗶𝗻𝗸\n"
-    "   (𝗮𝗹𝗶𝗮𝘀𝗲𝘀: /givelink, /invitelink)\n\n"
-    "❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-    "➻ 𝗮𝗱𝗺𝗶𝗻 𝗼𝗻𝗹𝘆\n"
-    "➻ 𝗯𝗼𝘁 𝗺𝘂𝘀𝘁 𝗯𝗲 𝗮𝗱𝗺𝗶𝗻 𝘄𝗶𝘁𝗵 '𝗶𝗻𝘃𝗶𝘁𝗲 𝘂𝘀𝗲𝗿𝘀 𝘃𝗶𝗮 𝗹𝗶𝗻𝗸' 𝗿𝗶𝗴𝗵𝘁\n"
-    "➻ 𝗲𝗮𝗰𝗵 𝗿𝘂𝗻 𝗰𝗿𝗲𝗮𝘁𝗲𝘀 𝗮 𝗳𝗿𝗲𝘀𝗵 𝗹𝗶𝗻𝗸 (𝗱𝗼𝗲𝘀𝗻'𝘁 𝗿𝗲𝘃𝗼𝗸𝗲 𝘁𝗵𝗲 𝗺𝗮𝗶𝗻 𝗼𝗻𝗲)\n"
-    "➻ 𝗴𝗿𝗼𝘂𝗽 𝗼𝗻𝗹𝘆, 𝘄𝗼𝗻'𝘁 𝘄𝗼𝗿𝗸 𝗶𝗻 𝗽𝗺"
+    f"<blockquote>🔗 <b>𝖨𝗇𝗏𝗂𝗍𝖾 𝖫𝗂𝗇𝗄</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/link</code> — 𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝖠 𝖡𝗋𝖺𝗇𝖽 𝖭𝖾𝗐 𝖦𝗋𝗈𝗎𝗉 𝖨𝗇𝗏𝗂𝗍𝖾 𝖫𝗂𝗇𝗄\n"
+    f"   (𝖠𝗅𝗂𝖺𝗌𝖾𝗌: /givelink, /invitelink)\n\n"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖠𝖽𝗆𝗂𝗇 𝖮𝗇𝗅𝗒\n"
+    f"➻ 𝖡𝗈𝗍 𝖬𝗎𝗌𝗍 𝖡𝖾 𝖠𝖽𝗆𝗂𝗇 𝖶𝗂𝗍𝗁 '𝖨𝗇𝗏𝗂𝗍𝖾 𝖴𝗌𝖾𝗋𝗌 𝖵𝗂𝖺 𝖫𝗂𝗇𝗄' 𝖱𝗂𝗀𝗁𝗍\n"
+    f"➻ 𝖤𝖺𝖼𝗁 𝖱𝗎𝗇 𝖢𝗋𝖾𝖺𝗍𝖾𝗌 𝖠 𝖥𝗋𝖾𝗌𝗁 𝖫𝗂𝗇𝗄 (𝖣𝗈𝖾𝗌𝗇'𝗍 𝖱𝖾𝗏𝗈𝗄𝖾 𝖳𝗁𝖾 𝖬𝖺𝗂𝗇 𝖮𝗇𝖾)\n"
+    f"➻ 𝖦𝗋𝗈𝗎𝗉 𝖮𝗇𝗅𝗒, 𝖶𝗈𝗇'𝗍 𝖶𝗈𝗋𝗄 𝖨𝗇 𝖯𝖬"
 )
-
 
 # ============================================================
 # Helpers
@@ -242,19 +237,17 @@ def register_groupinfo_handler(app: Client):
                     deleted += 1
 
             active = max(0, scanned - bots - deleted)
-
+            
             text = (
-                "╔══════════════════╗\n"
-                "   📊 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗳𝗼\n"
-                "╚══════════════════╝\n\n"
-                f"➻ 𝗻𝗮𝗺𝗲: <b>{chat.title}</b>\n"
-                f"➻ 𝗶𝗱: <code>{chat_id}</code>\n"
-                f"➻ 𝗼𝘄𝗻𝗲𝗿: {owner_line}\n\n"
-                f"➻ 𝘁𝗼𝘁𝗮𝗹 𝗺𝗲𝗺𝗯𝗲𝗿𝘀: <b>{total}</b>\n"
-                f"➻ 𝗮𝗱𝗺𝗶𝗻𝘀: <b>{admin_count}</b>\n"
-                f"➻ 𝗯𝗼𝘁𝘀: <b>{bots}</b>\n"
-                f"➻ 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗰𝗰𝗼𝘂𝗻𝘁𝘀: <b>{deleted}</b>\n"
-                f"➻ 𝗮𝗰𝘁𝗶𝘃𝗲 𝗮𝗰𝗰𝗼𝘂𝗻𝘁𝘀: <b>{active}</b>"
+                "<blockquote>📊 <b>𝖦𝗋𝗈𝗎𝗉 𝖨𝗇𝖿𝗈</b></blockquote>\n\n"
+                f"➻ 𝖭𝖺𝗆𝖾: <b>{chat.title}</b>\n"
+                f"➻ 𝖨𝖣: <code>{chat_id}</code>\n"
+                f"➻ 𝖮𝗐𝗇𝖾𝗋: {owner_line}\n\n"
+                f"➻ 𝖳𝗈𝗍𝖺𝗅 𝖬𝖾𝗆𝖻𝖾𝗋𝗌: <b>{total}</b>\n"
+                f"➻ 𝖠𝖽𝗆𝗂𝗇𝗌: <b>{admin_count}</b>\n"
+                f"➻ 𝖡𝗈𝗍𝗌: <b>{bots}</b>\n"
+                f"➻ 𝖣𝖾𝗅𝖾𝗍𝖾𝖽 𝖠𝖼𝖼𝗈𝗎𝗇𝗍𝗌: <b>{deleted}</b>\n"
+                f"➻ 𝖠𝖼𝗍𝗂𝗏𝖾 𝖠𝖼𝖼𝗈𝗎𝗇𝗍𝗌: <b>{active}</b>"
             )
             await status_msg.edit_text(text, parse_mode=enums.ParseMode.HTML)
         except Exception as e:
@@ -271,7 +264,7 @@ def register_groupinfo_handler(app: Client):
 
         if not await bot_can_invite(client, message.chat.id):
             return await message.reply_text(
-                "⚠️ ɪ ɴᴇᴇᴅ '𝗶𝗻𝘃𝗶𝘁𝗲 𝘂𝘀𝗲𝗿𝘀 𝘃𝗶𝗮 𝗹𝗶𝗻𝗸' ᴀᴅᴍɪɴ ʀɪɢʜᴛ ᴛᴏ ᴅᴏ ᴛʜɪꜱ."
+                "⚠️ 𝖨 𝖭𝖾𝖾𝖽 '𝖨𝗇𝗏𝗂𝗍𝖾 𝖴𝗌𝖾𝗋𝗌 𝖵𝗂𝖺 𝖫𝗂𝗇𝗄' 𝖠𝖽𝗆𝗂𝗇 𝖱𝗂𝗀𝗁𝗍 𝖳𝗈 𝖣𝗈 𝖳𝗁𝗂𝗌"
             )
 
         status_msg = await message.reply_text("⏳ ɢᴇɴᴇʀᴀᴛɪɴɢ ɪɴᴠɪᴛᴇ ʟɪɴᴋ…")
