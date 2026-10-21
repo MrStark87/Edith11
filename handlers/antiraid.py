@@ -45,29 +45,22 @@ def fmt_raid_time(seconds: int) -> str:
         return f"{seconds // 60}m"
     return f"{seconds // 3600}h"
 
-
 ANTIRAID_HELP_TEXT = (
-    f"╔══════════════════╗\n"
-    f".   🛡️ 𝗔𝗻𝘁𝗶 𝗥𝗮𝗶𝗱\n"
-    f"╚══════════════════╝\n\n"
-    
-    f"𝗻𝗲𝘄 𝘂𝘀𝗲𝗿𝘀 𝘄𝗵𝗼 𝗷𝗼𝗶𝗻 𝘁𝗵𝗲 𝗴𝗿𝗼𝘂𝗽 𝗮𝗿𝗲\n"
-    f"𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 𝗺𝘂𝘁𝗲𝗱 𝗳𝗼𝗿 𝗮 𝘀𝗲𝘁 𝘁𝗶𝗺𝗲,\n"
-    f"𝘁𝗵𝗲𝗻 𝘂𝗻𝗺𝘂𝘁𝗲𝗱 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆.\n\n"
-    
-    f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    f"➻ /antiraid 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 𝗮𝘂𝘁𝗼 𝗺𝘂𝘁𝗲 ✅\n"
-    f"➻ /antiraid 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗮𝘂𝘁𝗼 𝗺𝘂𝘁𝗲 ❌\n"
-    f"➻ /raiddelay <time> — 𝘀𝗲𝘁 𝗺𝘂𝘁𝗲 𝗱𝘂𝗿𝗮𝘁𝗶𝗼𝗻\n\n"
-    
-    f"❖ 𝘁𝗶𝗺𝗲 𝗳𝗼𝗿𝗺𝗮𝘁 ❖\n"
-    f"➻ <code>1𝘀, 1𝗺, 1𝗵</code>\n"
-    f"➻ <code>0</code> = 𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁 (𝗮𝗱𝗺𝗶𝗻 𝗺𝘂𝘀𝘁 𝘂𝗻𝗺𝘂𝘁𝗲)\n\n"
-    
-    f"❖ 𝗲𝘅𝗮𝗺𝗽𝗹𝗲𝘀 ❖\n"
-    f"<code>/raiddelay 30𝘀</code> — 𝗺𝘂𝘁𝗲 𝗳𝗼𝗿 30 𝘀𝗲𝗰𝗼𝗻𝗱𝘀\n"
-    
-    f"<i>👮 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻𝘀 𝗰𝗮𝗻 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲 𝘁𝗵𝗶𝘀</i>"
+    f"<blockquote>🛡️ <b>𝖠𝗇𝗍𝗂 𝖱𝖺𝗂𝖽</b></blockquote>\n\n"
+    f"𝖭𝖾𝗐 𝗎𝗌𝖾𝗋𝗌 𝗐𝗁𝗈 𝗃𝗈𝗂𝗇 𝗍𝗁𝖾 𝗀𝗋𝗈𝗎𝗉 𝖺𝗋𝖾\n"
+    f"𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝗆𝗎𝗍𝖾𝖽 𝖿𝗈𝗋 𝖺 𝗌𝖾𝗍 𝗍𝗂𝗆𝖾,\n"
+    f"𝖳𝗁𝖾𝗇 𝗎𝗇𝗆𝗎𝗍𝖾𝖽 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒.\n\n"
+
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/antiraid on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 𝖠𝗎𝗍𝗈 𝖬𝗎𝗍𝖾 ✅\n"
+    f"➻ <code>/antiraid off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖠𝗎𝗍𝗈 𝖬𝗎𝗍𝖾 ❌\n"
+    f"➻ <code>/raiddelay &lt;time&gt;</code> — 𝖲𝖾𝗍 𝖬𝗎𝗍𝖾 𝖣𝗎𝗋𝖺𝗍𝗂𝗈𝗇\n\n"  
+    f"<blockquote expandable>❖ <b>𝖳𝗂𝗆𝖾 𝖥𝗈𝗋𝗆𝖺𝗍</b> ❖</blockquote>\n"
+    f"➻ <code>1s, 1m, 1h</code>\n"
+    f"➻ <code>0</code> = 𝖯𝖾𝗋𝗆𝖺𝗇𝖾𝗇𝗍 (𝖠𝖽𝗆𝗂𝗇 𝖬𝗎𝗌𝗍 𝖴𝗇𝗆𝗎𝗍𝖾)\n\n"
+    f"<blockquote expandable>❖ <b>𝖤𝗑𝖺𝗆𝗉𝗅𝖾𝗌</b> ❖</blockquote>\n"
+    f"<code>/raiddelay 30s</code> — 𝖬𝗎𝗍𝖾 𝖥𝗈𝗋 30 𝖲𝖾𝖼𝗈𝗇𝖽𝗌\n\n"
+    f"<i>👮 𝖮𝗇𝗅𝗒 𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝖺𝗇 𝖢𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖾 𝖳𝗁𝗂𝗌</i>"
 )
 
 
