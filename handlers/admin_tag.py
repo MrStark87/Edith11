@@ -17,29 +17,20 @@ logger = logging.getLogger(__name__)
 # Help Text
 # ============================================================
 ADMIN_TAG_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "   🆘 @𝗮𝗱𝗺𝗶𝗻 𝘀𝘆𝘀𝘁𝗲𝗺\n"
-    "╚══════════════════╝\n\n"
-
-    "❖ 𝗵𝗼𝘄 𝘁𝗼 𝘂𝘀𝗲 ❖\n\n"
-
-    "➻ 𝗧𝘆𝗽𝗲 <code>@𝗮𝗱𝗺𝗶𝗻</code> 𝗶𝗻 𝗴𝗿𝗼𝘂𝗽\n"
-    "→ 𝘁𝗮𝗴𝘀 𝗮𝗹𝗹 𝗮𝗱𝗺𝗶𝗻𝘀 𝗮𝘁 𝗼𝗻𝗰𝗲\n\n"
-
-    "➻ 𝗧𝘆𝗽𝗲 <code>@𝗮𝗱𝗺𝗶𝗻𝘀</code> 𝗶𝗻 𝗴𝗿𝗼𝘂𝗽\n"
-    "→ 𝘀𝗮𝗺𝗲 𝗮𝘀 @𝗮𝗱𝗺𝗶𝗻\n\n"
-
-    "❖ 𝗮𝗱𝗺𝗶𝗻 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-
-    "➻ /admintag 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 @𝗮𝗱𝗺𝗶𝗻 𝘁𝗮𝗴𝗴𝗶𝗻𝗴\n"
-    "➻ /admintag 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 @𝗮𝗱𝗺𝗶𝗻 𝘁𝗮𝗴𝗴𝗶𝗻𝗴\n\n"
-
-    "❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-    "➻ 𝗮𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝘁𝗼 𝗮𝗹𝗹 𝗴𝗿𝗼𝘂𝗽 𝗺𝗲𝗺𝗯𝗲𝗿𝘀\n"
-    "➻ 𝗯𝗼𝘁𝘀 𝗮𝗿𝗲 𝗻𝗼𝘁 𝘁𝗮𝗴𝗴𝗲𝗱\n"
-    "➻ 𝗼𝗻 𝗯𝘆 𝗱𝗲𝗳𝗮𝘂𝗹𝘁"
+    f"<blockquote>🆘 <b>𝖠𝖽𝗆𝗂𝗇 𝖳𝖺𝗀 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖧𝗈𝗐 𝖳𝗈 𝖴𝗌𝖾</b> ❖</blockquote>\n"
+    f"➻ 𝖳𝗒𝗉𝖾 <code>@admin</code> 𝖨𝗇 𝖦𝗋𝗈𝗎𝗉\n"
+    f"➥ 𝖳𝖺𝗀𝗌 𝖠𝗅𝗅 𝖠𝖽𝗆𝗂𝗇𝗌 𝖠𝗍 𝖮𝗇𝖼𝖾\n\n"
+    f"➻ 𝖳𝗒𝗉𝖾 <code>@admins</code> 𝖨𝗇 𝖦𝗋𝗈𝗎𝗉\n"
+    f"➥ 𝖲𝖺𝗆𝖾 𝖠𝗌 <code>@admin</code>\n\n"
+    f"<blockquote expandable>❖ <b>𝖠𝖽𝗆𝗂𝗇 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/admintag on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 𝖠𝖽𝗆𝗂𝗇 𝖳𝖺𝗀𝗀𝗂𝗇𝗀\n"
+    f"➻ <code>/admintag off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖠𝖽𝗆𝗂𝗇 𝖳𝖺𝗀𝗀𝗂𝗇𝗀\n\n"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖠𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝖳𝗈 𝖠𝗅𝗅 𝖦𝗋𝗈𝗎𝗉 𝖬𝖾𝗆𝖻𝖾𝗋𝗌\n"
+    f"➻ 𝖡𝗈𝗍𝗌 𝖠𝗋𝖾 𝖭𝗈𝗍 𝖳𝖺𝗀𝗀𝖾𝖽\n"
+    f"➻ 𝖮𝗇 𝖡𝗒 𝖣𝖾𝖿𝖺𝗎𝗅𝗍"
 )
-
 # Emoji cycle for admin mentions
 EMOJIS = [
     "🪷", "🪷", "🪷", "🪷", "🪷",
