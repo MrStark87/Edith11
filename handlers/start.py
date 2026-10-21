@@ -30,12 +30,12 @@ def register_handlers(app: Client):
             f"<b>⇩</b> 𝖭𝖾𝖾𝖽 𝖧𝖾𝗅𝗉? 𝖴𝗌𝖾 𝗍𝗁𝖾 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗈𝗋 𝗌𝖾𝗇𝖽 /help"
         )
         buttons = InlineKeyboardMarkup([
-            [InlineKeyboardButton("✙ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ✙", url=f"https://t.me/{BOT_USERNAME}?startgroup=true", style=ButtonStyle.PRIMARY)],
+            [InlineKeyboardButton("✙ 𝖠𝖽𝖽 𝖬𝖾 𝖨𝗇 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ✙", url=f"https://t.me/{BOT_USERNAME}?startgroup=true", style=ButtonStyle.PRIMARY)],
             [
-                InlineKeyboardButton("⌯ ꜱᴜᴘᴘᴏʀᴛ ⌯", url=SUPPORT_GROUP, style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton("⌯ ᴜᴘᴅᴀᴛᴇ ⌯", url=UPDATE_CHANNEL, style=ButtonStyle.SUCCESS),
+                InlineKeyboardButton("⌯ 𝖲𝗎𝗉𝗉𝗈𝗋𝗍 ⌯", url=SUPPORT_GROUP, style=ButtonStyle.SUCCESS),
+                InlineKeyboardButton("⌯ 𝖴𝗉𝖽𝖺𝗍𝖾 ⌯", url=UPDATE_CHANNEL, style=ButtonStyle.SUCCESS),
             ],
-            [InlineKeyboardButton("⌯ ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ ⌯", callback_data="help", style=ButtonStyle.PRIMARY)]
+            [InlineKeyboardButton("⌯ 𝖧𝖾𝗅𝗉𝗌 𝖺𝗇𝖽 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 ⌯", callback_data="help", style=ButtonStyle.PRIMARY)]
         ])
 
         if message.text:
@@ -137,12 +137,13 @@ def register_handlers(app: Client):
     @app.on_message(filters.group & filters.command("help"))
     async def group_start_command(client, message):
         buttons = InlineKeyboardMarkup([[
-            InlineKeyboardButton("⌯ ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ ⌯", url=f"https://t.me/{BOT_USERNAME}?start=help", style=ButtonStyle.PRIMARY),
+            InlineKeyboardButton("⌯ 𝖧𝖾𝗅𝗉𝗌 𝖺𝗇𝖽 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 ⌯", url=f"https://t.me/{BOT_USERNAME}?start=help", style=ButtonStyle.PRIMARY),
         ]])
         await message.reply_photo(
             START_IMAGE,
             caption=(
-                "<emoji id=5231102735817918643>👇</emoji> 𝗰𝗹𝗶𝗰𝗸 𝗼𝗻 𝘁𝗵𝗲 𝗯𝘂𝘁𝘁𝗼𝗻 𝗯𝗲𝗹𝗼𝘄 𝘁𝗼 𝗴𝗲𝘁 𝗺𝘆 𝗵𝗲𝗹𝗽 𝗺𝗲𝗻𝘂 𝗶𝗻 𝘆𝗼𝘂𝗿 𝗽𝗺."
+                "<emoji id=5231102735817918643>👇</emoji> <b> 𝖼𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗍𝗈 𝗀𝖾𝗍 𝗆𝗒 𝗁𝖾𝗅𝗉 𝗆𝖾𝗇𝗎 𝗂𝗇 𝗒𝗈𝗎𝗋 𝗉𝗆</b>.
+                "
             ),
             reply_markup=buttons,
             parse_mode=enums.ParseMode.HTML,
