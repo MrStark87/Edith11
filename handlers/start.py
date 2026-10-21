@@ -282,19 +282,19 @@ def register_handlers(app: Client):
         )
         rows = [
             [
-                InlineKeyboardButton("🔮 ᴍᴏᴅᴇʀᴀᴛɪᴏɴ", callback_data="help_cat|moderation|0", style=ButtonStyle.PRIMARY),
-                InlineKeyboardButton("🛡️ ꜱᴇᴄᴜʀɪᴛʏ", callback_data="help_cat|security|0", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("🔮 𝖬𝗈𝖽𝖾𝗋𝖺𝗍𝗂𝗈𝗇", callback_data="help_cat|moderation|0", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("🛡️ 𝖲𝖾𝖼𝗎𝗋𝗂𝗍𝗒", callback_data="help_cat|security|0", style=ButtonStyle.PRIMARY),
             ],
             [
-                InlineKeyboardButton("⚙️ ᴜᴛɪʟɪᴛʏ", callback_data="help_cat|utility|0", style=ButtonStyle.PRIMARY),
-                InlineKeyboardButton("👥 ɢʀᴏᴜᴘꜱ", callback_data="help_cat|groups|0", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("⚙️ 𝖴𝗍𝗂𝗅𝗂𝗍𝗒", callback_data="help_cat|utility|0", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("👥 𝖦𝗋𝗈𝗎𝗉𝗌", callback_data="help_cat|groups|0", style=ButtonStyle.PRIMARY),
             ],
             [
-                InlineKeyboardButton("💰 ᴇᴄᴏɴᴏᴍʏ", callback_data="eco_menu", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("💰 𝖤𝖼𝗈𝗇𝗈𝗆𝗒", callback_data="eco_menu", style=ButtonStyle.PRIMARY),
             ],
             [
-                InlineKeyboardButton("🏠 ʙᴀᴄᴋ", callback_data="back_to_start", style=ButtonStyle.DANGER),
-                InlineKeyboardButton("✖ ᴄʟᴏꜱᴇ", callback_data="help_close", style=ButtonStyle.DANGER),
+                InlineKeyboardButton("🏠 𝖡𝖺𝖼𝗄", callback_data="back_to_start", style=ButtonStyle.DANGER),
+                InlineKeyboardButton("✖ 𝖢𝗅𝗈𝗌𝖾", callback_data="help_close", style=ButtonStyle.DANGER),
             ],
         ]
         return text, InlineKeyboardMarkup(rows)
@@ -316,22 +316,22 @@ def register_handlers(app: Client):
 
         nav = []
         if page > 0:
-            nav.append(InlineKeyboardButton("« ᴘʀᴇᴠ", callback_data=f"help_cat|{category}|{page - 1}", style=ButtonStyle.SUCCESS))
+            nav.append(InlineKeyboardButton("« 𝖯𝗋𝖾𝗏", callback_data=f"help_cat|{category}|{page - 1}", style=ButtonStyle.SUCCESS))
         else:
             nav.append(InlineKeyboardButton("«", callback_data="noop", style=ButtonStyle.SUCCESS))
 
-        nav.append(InlineKeyboardButton("🔙 ʙᴀᴄᴋ", callback_data="help_categories", style=ButtonStyle.DANGER))
+        nav.append(InlineKeyboardButton("🔙 𝖡𝖺𝖼𝗄", callback_data="help_categories", style=ButtonStyle.DANGER))
 
         if page < total_pages - 1:
-            nav.append(InlineKeyboardButton("ɴᴇxᴛ »", callback_data=f"help_cat|{category}|{page + 1}", style=ButtonStyle.SUCCESS))
+            nav.append(InlineKeyboardButton("𝖭𝖾𝗑𝗍 »", callback_data=f"help_cat|{category}|{page + 1}", style=ButtonStyle.SUCCESS))
         else:
             nav.append(InlineKeyboardButton("»", callback_data="noop", style=ButtonStyle.SUCCESS))
 
         rows.append(nav)
 
         text = (
-            f"❖ {category.upper()} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n"
-            "➥ 𝗮𝘀𝗸 𝘆𝗼𝘂𝗿 𝗱𝗼𝘂𝗯𝘁𝘀 𝗮𝘁 <a href='https://t.me/CarelessxWorld'>𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝗰𝗵𝗮𝘁</a>"
+            f"<blockquote expandable>❖ {category.upper()} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀</blockquote>\n\n"
+            "➥ 𝖠𝗌𝗄 𝗒𝗈𝗎𝗋 𝖽𝗈𝗎𝖻𝗍𝗌 𝖺𝗍 <a href='https://t.me/CarelessxWorld'>𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖢𝗁𝖺𝗍</a>"
         )
         return text, InlineKeyboardMarkup(rows)
 
@@ -351,8 +351,8 @@ def register_handlers(app: Client):
     def make_back_btn(category: str, page: int):
         # "back" from any detail view returns just one step back — to that category's page
         return InlineKeyboardMarkup([[
-            InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data=f"help_cat|{category}|{page}", style=ButtonStyle.PRIMARY),
-            InlineKeyboardButton("🏠 ʜᴏᴍᴇ", callback_data="back_to_start", style=ButtonStyle.DANGER),
+            InlineKeyboardButton("« 𝖡𝖺𝖼𝗄", callback_data=f"help_cat|{category}|{page}", style=ButtonStyle.PRIMARY),
+            InlineKeyboardButton("🏠 𝖧𝗈𝗆𝖾", callback_data="back_to_start", style=ButtonStyle.DANGER),
         ]])
 
 
@@ -406,11 +406,12 @@ def register_handlers(app: Client):
         async def echo_help_callback(client, callback_query):
             page = int(callback_query.matches[0].group(1))
             text = (
-                f"╔══════════════════╗\n"
-                f"  🎀 𝗷𝗼𝗶𝗻/leave 𝗱𝗲𝗹𝗲𝘁𝗲𝗿\n"
-                f"╚══════════════════╝\n\n"
-                f"➻ /cleanservice 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 𝗮𝘂𝘁𝗼 𝗱𝗲𝗹𝗲𝘁𝗲 𝗳𝗼𝗿 𝗷𝗼𝗶𝗻/leave 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀\n"
-                f"➻ /cleanservice 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗮𝘂𝘁𝗼 𝗱𝗲𝗹𝗲𝘁𝗲 𝗳𝗼𝗿 𝗷𝗼𝗶𝗻/leave 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀\n"
+                f"<blockquote>🎀 <b>𝖩𝗈𝗂𝗇 / 𝖫𝖾𝖺𝗏𝖾 𝖣𝖾𝗅𝖾𝗍𝖾𝗋</b></blockquote>\n\n"
+                f"❖ <i>𝖠𝗎𝗍𝗈-𝖽𝖾𝗅𝖾𝗍𝖾 𝗃𝗈𝗂𝗇 / 𝗅𝖾𝖺𝗏𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌</i>\n\n"
+                f"➻ <code>/cleanservice on</code> <b>𝖤𝗇𝖺𝖻𝗅𝖾</b> — 𝖠𝗎𝗍𝗈-𝖽𝖾𝗅𝖾𝗍𝖾\n"
+                f"       <i>𝖿𝗈𝗋 𝗃𝗈𝗂𝗇 / 𝗅𝖾𝖺𝗏𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌</i>\n\n"
+                f"➻ <code>/cleanservice off</code> <b>𝖣𝗂𝗌𝖺𝖻𝗅𝖾</b> — 𝖠𝗎𝗍𝗈-𝖽𝖾𝗅𝖾𝗍𝖾\n"
+                f"       <i>𝖿𝗈𝗋 𝗃𝗈𝗂𝗇 / 𝗅𝖾𝖺𝗏𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌</i>\n"
             )
             await callback_query.message.edit_media(
                 InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -457,18 +458,18 @@ def register_handlers(app: Client):
     async def locks_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f". ⚙ 𝗹𝗼𝗰𝗸𝘀 𝘀𝘆𝘀𝘁𝗲𝗺\n"
-            f"╚══════════════════╝\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /lock — 𝗲𝗻𝗮𝗯𝗹𝗲 𝗮 𝗹𝗼𝗰𝗸\n"
-            f"➻ /unlock  — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗮 𝗹𝗼𝗰𝗸\n"
-            f"➻ /locks — 𝘀𝗵𝗼𝘄 𝗮𝗰𝘁𝗶𝘃𝗲 𝗹𝗼𝗰𝗸𝘀\n"
-            f"➻ /lockall — 𝗹𝗼𝗰𝗸 𝗲𝘃𝗲𝗿𝘆𝘁𝗵𝗶𝗻𝗴 🔐\n"
-            f"➻ /unlockall — 𝘂𝗻𝗹𝗼𝗰𝗸 𝗲𝘃𝗲𝗿𝘆𝘁𝗵𝗶𝗻𝗴 🔓\n\n"
-            f"❖ 𝗮𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝘁𝘆𝗽𝗲𝘀 ❖\n"
-            f"<code>𝘂𝗿𝗹</code> • <code>𝘁𝗲𝘅𝘁</code> • <code>𝘀𝘁𝗶𝗰𝗸𝗲𝗿</code> • <code>𝗺𝗲𝗱𝗶𝗮</code> • <code>𝗺𝘂𝘀𝗶𝗰</code>\n"
-            f"<code>𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲</code> • <code>𝗳𝗼𝗿𝘄𝗮𝗿𝗱</code> • <code>𝗲𝗱𝗶𝘁</code> • <code>𝗳𝗶𝗹𝗲𝘀</code> • <code>ᴇᴍᴏᴊɪ</code>"
+            f"<blockquote>⚙️ <b>𝖫𝗈𝖼𝗄𝗌 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/lock</code> — <i>𝖤𝗇𝖺𝖻𝗅𝖾 𝖺 𝗅𝗈𝖼𝗄</i>\n"
+            f"➻ <code>/unlock</code> — <i>𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖺 𝗅𝗈𝖼𝗄</i>\n"
+            f"➻ <code>/locks</code> — <i>𝖲𝗁𝗈𝗐 𝖺𝖼𝗍𝗂𝗏𝖾 𝗅𝗈𝖼𝗄𝗌</i>\n"
+            f"➻ <code>/lockall</code> — <i>𝖫𝗈𝖼𝗄 𝖾𝗏𝖾𝗋𝗒𝗍𝗁𝗂𝗇𝗀</i> 🔐\n"
+            f"➻ <code>/unlockall</code> — <i>𝖴𝗇𝗅𝗈𝖼𝗄 𝖾𝗏𝖾𝗋𝗒𝗍𝗁𝗂𝗇𝗀</i> 🔓\n\n"
+            f"<blockquote expandable>❖ <b>𝖠𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝖳𝗒𝗉𝖾𝗌</b> ❖</blockquote>\n"
+            f"<code>url</code> • <code>text</code> • <code>sticker</code> • "
+            f"<code>media</code> • <code>music</code>\n"
+            f"<code>username</code> • <code>forward</code> • <code>edit</code> • "
+            f"<code>files</code> • <code>emoji</code>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -480,22 +481,21 @@ def register_handlers(app: Client):
     async def moderation_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  ⚙️ 𝗺𝗼𝗱𝗲𝗿𝗮𝘁𝗶𝗼𝗻\n"
-            f"╚══════════════════╝\n\n"
-            f"➻ /kick — 𝗿𝗲𝗺𝗼𝘃𝗲 𝗮 𝘂𝘀𝗲𝗿\n"
-            f"➻ /ban — 𝗯𝗮𝗻 𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁𝗹𝘆\n"
-            f"➻ /unban — 𝗹𝗶𝗳𝘁 𝗯𝗮𝗻\n"
-            f"➻ /mute — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀\n"
-            f"➻ /unmute — 𝗮𝗹𝗹𝗼𝘄 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗮𝗴𝗮𝗶𝗻\n"
-            f"➻ /tmute <time> — 𝘁𝗲𝗺𝗽 𝗺𝘂𝘁𝗲 (1𝗺–24𝗵)\n"
-            f"➻ /tban <time> — 𝘁𝗲𝗺𝗽 𝗯𝗮𝗻 (1𝗺–24𝗵)\n"
-            f"➻ /dkick — 𝗸𝗶𝗰𝗸 𝗯𝘆 𝗿𝗲𝗽𝗹𝘆 + 𝗱𝗲𝗹𝗲𝘁𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-            f"➻ /skick — 𝘀𝗶𝗹𝗲𝗻𝘁 𝗸𝗶𝗰𝗸 + 𝗱𝗲𝗹𝗲𝘁𝗲 𝗰𝗺𝗱\n"
-            f"➻ /dmute — 𝗺𝘂𝘁𝗲 + 𝗱𝗲𝗹𝗲𝘁𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-            f"➻ /dban — 𝗯𝗮𝗻 + 𝗱𝗲𝗹𝗲𝘁𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-            f"➻ /dwarn — 𝘄𝗮𝗿𝗻 + 𝗱𝗲𝗹𝗲𝘁𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
+            f"<blockquote>⚙️ <b>𝖬𝗈𝖽𝖾𝗋𝖺𝗍𝗂𝗈𝗇</b></blockquote>\n\n"
+            f"➻ <code>/kick</code> — <i>𝖱𝖾𝗆𝗈𝗏𝖾 𝖺 𝗎𝗌𝖾𝗋</i>\n"
+            f"➻ <code>/ban</code> — <i>𝖡𝖺𝗇 𝗉𝖾𝗋𝗆𝖺𝗇𝖾𝗇𝗍𝗅𝗒</i>\n"
+            f"➻ <code>/unban</code> — <i>𝖫𝗂𝖿𝗍 𝖺 𝖻𝖺𝗇</i>\n"
+            f"➻ <code>/mute</code> — <i>𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌</i>\n"
+            f"➻ <code>/unmute</code> — <i>𝖠𝗅𝗅𝗈𝗐 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖺𝗀𝖺𝗂𝗇</i>\n"
+            f"➻ <code>/tmute &lt;time&gt;</code> — <i>𝖳𝖾𝗆𝗉 𝗆𝗎𝗍𝖾 (1m–24h)</i>\n"
+            f"➻ <code>/tban &lt;time&gt;</code> — <i>𝖳𝖾𝗆𝗉 𝖻𝖺𝗇 (1m–24h)</i>\n"
+            f"➻ <code>/dkick</code> — <i>𝖪𝗂𝖼𝗄 𝖻𝗒 𝗋𝖾𝗉𝗅𝗒 + 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
+            f"➻ <code>/skick</code> — <i>𝖲𝗂𝗅𝖾𝗇𝗍 𝗄𝗂𝖼𝗄 + 𝖽𝖾𝗅𝖾𝗍𝖾 𝖼𝗆𝖽</i>\n"
+            f"➻ <code>/dmute</code> — <i>𝖬𝗎𝗍𝖾 + 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
+            f"➻ <code>/dban</code> — <i>𝖡𝖺𝗇 + 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
+            f"➻ <code>/dwarn</code> — <i>𝖶𝖺𝗋𝗇 + 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
         )
+        
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
             reply_markup=make_back_btn(category, page)
@@ -506,23 +506,22 @@ def register_handlers(app: Client):
     async def warns_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"   ⚠️ 𝘄𝗮𝗿𝗻 𝘀𝘆𝘀𝘁𝗲𝗺\n"
-            f"╚══════════════════╝\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /warn [𝗿𝗲𝗮𝘀𝗼𝗻] — 𝘄𝗮𝗿𝗻 𝗮 𝘂𝘀𝗲𝗿\n"
-            f"➻ /dwarn — 𝘄𝗮𝗿𝗻 + 𝗱𝗲𝗹𝗲𝘁𝗲 𝘁𝗵𝗲𝗶𝗿 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-            f"➻ /warns — 𝘃𝗶𝗲𝘄 𝘄𝗮𝗿𝗻 𝗵𝗶𝘀𝘁𝗼𝗿𝘆\n"
-            f"➻ /unwarn — 𝗿𝗲𝗺𝗼𝘃𝗲 1 𝘄𝗮𝗿𝗻\n"
-            f"➻ /resetwarns — 𝗰𝗹𝗲𝗮𝗿 𝗮𝗹𝗹 𝘄𝗮𝗿𝗻𝘀\n"
-            f"➻ /setwarnlimit [ 1-10 ]— 𝘀𝗲𝘁 𝘄𝗮𝗿𝗻 𝗹𝗶𝗺𝗶𝘁\n"
-            f"➻ /setwarnaction 𝗺𝘂𝘁𝗲|𝗸𝗶𝗰𝗸|𝗯𝗮𝗻\n\n"
-            f"❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-            f"➻ 𝗱𝗲𝗳𝗮𝘂𝗹𝘁 𝗹𝗶𝗺𝗶𝘁: 3 𝘄𝗮𝗿𝗻𝘀\n"
-            f"➻ 𝗱𝗲𝗳𝗮𝘂𝗹𝘁 𝗮𝗰𝘁𝗶𝗼𝗻: 𝗺𝘂𝘁𝗲\n"
-            f"➻ 𝘄𝗮𝗿𝗻𝘀 𝗿𝗲𝘀𝗲𝘁 𝗮𝗳𝘁𝗲𝗿 𝗮𝗰𝘁𝗶𝗼𝗻 𝘁𝗮𝗸𝗲𝗻\n"
-            f"➻ 𝗹𝗮𝘀𝘁 5 𝗿𝗲𝗮𝘀𝗼𝗻𝘀 𝘀𝗵𝗼𝘄𝗻 𝗶𝗻 /warns"
+            f"<blockquote>⚠️ <b>𝖶𝖺𝗋𝗇 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/warn [reason]</code> — <i>𝖶𝖺𝗋𝗇 𝖺 𝗎𝗌𝖾𝗋</i>\n"
+            f"➻ <code>/dwarn</code> — <i>𝖶𝖺𝗋𝗇 + 𝖽𝖾𝗅𝖾𝗍𝖾 𝗍𝗁𝖾𝗂𝗋 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
+            f"➻ <code>/warns</code> — <i>𝖵𝗂𝖾𝗐 𝗐𝖺𝗋𝗇 𝗁𝗂𝗌𝗍𝗈𝗋𝗒</i>\n"
+            f"➻ <code>/unwarn</code> — <i>𝖱𝖾𝗆𝗈𝗏𝖾 𝟣 𝗐𝖺𝗋𝗇</i>\n"
+            f"➻ <code>/resetwarns</code> — <i>𝖢𝗅𝖾𝖺𝗋 𝖺𝗅𝗅 𝗐𝖺𝗋𝗇𝗌</i>\n"
+            f"➻ <code>/setwarnlimit [1-10]</code> — <i>𝖲𝖾𝗍 𝗐𝖺𝗋𝗇 𝗅𝗂𝗆𝗂𝗍</i>\n"
+            f"➻ <code>/setwarnaction mute|kick|ban</code> <i>𝖲𝖾𝗍 𝗐𝖺𝗋𝗇 𝖺𝖼𝗍𝗂𝗈𝗇</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+            f"➻ <i>𝖣𝖾𝖿𝖺𝗎𝗅𝗍 𝗅𝗂𝗆𝗂𝗍:</i> <code>3 warns</code>\n"
+            f"➻ <i>𝖣𝖾𝖿𝖺𝗎𝗅𝗍 𝖺𝖼𝗍𝗂𝗈𝗇:</i> <code>mute</code>\n"
+            f"➻ <i>𝖶𝖺𝗋𝗇𝗌 𝗋𝖾𝗌𝖾𝗍 𝖺𝖿𝗍𝖾𝗋 𝖺𝖼𝗍𝗂𝗈𝗇 𝗂𝗌 𝗍𝖺𝗄𝖾𝗇</i>\n"
+            f"➻ <i>𝖫𝖺𝗌𝗍 𝟧 𝗋𝖾𝖺𝗌𝗈𝗇𝗌 𝗌𝗁𝗈𝗐𝗇 𝗂𝗇</i> <code>/warns</code>"
         )
+        
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
             reply_markup=make_back_btn(category, page)
@@ -533,18 +532,16 @@ def register_handlers(app: Client):
     async def biolink_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  🔗 𝗯𝗶𝗼𝗹𝗶𝗻𝗸 𝗽𝗿𝗼𝘁𝗲𝗰𝘁𝗶𝗼𝗻\n"
-            f"╚══════════════════╝\n\n"
-            f"𝗯𝗹𝗼𝗰𝗸𝘀 𝘂𝘀𝗲𝗿𝘀 𝘄𝗵𝗼 𝗵𝗮𝘃𝗲 𝗹𝗶𝗻𝗸𝘀 𝗶𝗻 𝘁𝗵𝗲𝗶𝗿 𝗯𝗶𝗼.\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /biolink 𝗼𝗻 — 𝗽𝗿𝗼𝘁𝗲𝗰𝘁𝗶𝗼𝗻 𝗼𝗻 ✅\n"
-            f"➻ /biolink 𝗼𝗳𝗳 — 𝗽𝗿𝗼𝘁𝗲𝗰𝘁𝗶𝗼𝗻 𝗼𝗳𝗳 ❌\n"
-            f"➻ /bioconfig — 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲 𝗮𝗰𝘁𝗶𝗼𝗻\n\n"
-            f"❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-            f"➻ 𝗯𝗶𝗼 𝗹𝗶𝗻𝗸 𝗱𝗲𝘁𝗲𝗰𝘁𝗲𝗱 → 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱\n"
-            f"➻ 𝗮𝗱𝗺𝗶𝗻𝘀 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗮𝗳𝗳𝗲𝗰𝘁𝗲𝗱\n"
-            f"➻ 𝗯𝗼𝘁 𝗻𝗲𝗲𝗱𝘀 𝗱𝗲𝗹𝗲𝘁𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗽𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻"
+            f"<blockquote>🔗 <b>𝖡𝗂𝗈𝗅𝗂𝗇𝗄 𝖯𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇</b></blockquote>\n\n"
+            f"<i>𝖡𝗅𝗈𝖼𝗄𝗌 𝗎𝗌𝖾𝗋𝗌 𝗐𝗁𝗈 𝗁𝖺𝗏𝖾 𝗅𝗂𝗇𝗄𝗌 𝗂𝗇 𝗍𝗁𝖾𝗂𝗋 𝖻𝗂𝗈.</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/biolink on</code> — <i>𝖤𝗇𝖺𝖻𝗅𝖾 𝗉𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇</i> ✅\n"
+            f"➻ <code>/biolink off</code> — <i>𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝗉𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇</i> ❌\n"
+            f"➻ <code>/bioconfig</code> — <i>𝖢𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖾 𝖺𝖼𝗍𝗂𝗈𝗇</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+            f"➻ <i>𝖡𝗂𝗈 𝗅𝗂𝗇𝗄 𝖽𝖾𝗍𝖾𝖼𝗍𝖾𝖽</i> → <b>𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖽𝖾𝗅𝖾𝗍𝖾𝖽</b>\n"
+            f"➻ <i>𝖠𝖽𝗆𝗂𝗇𝗌 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖺𝖿𝖿𝖾𝖼𝗍𝖾𝖽</i>\n"
+            f"➻ <i>𝖡𝗈𝗍 𝗇𝖾𝖾𝖽𝗌 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝗉𝖾𝗋𝗆𝗂𝗌𝗌𝗂𝗈𝗇</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -576,17 +573,15 @@ def register_handlers(app: Client):
     async def abuse_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  🤬 𝗮𝗯𝘂𝘀𝗲 𝗱𝗲𝘁𝗲𝗰𝘁𝗶𝗼𝗻\n"
-            f"╚══════════════════╝\n\n"
-            f"𝗮𝗯𝘂𝘀𝗶𝘃𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗮𝗿𝗲 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 𝗱𝗲𝗹𝗲𝘁𝗲𝗱.\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /noabuse 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 ✅\n"
-            f"➻ /noabuse 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❌\n\n"
-            f"❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-            f"➻ 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗶𝗻𝘀𝘁𝗮𝗻𝘁𝗹𝘆\n"
-            f"➻ 5 𝘀𝗲𝗰𝗼𝗻𝗱 𝘄𝗮𝗿𝗻𝗶𝗻𝗴 𝘀𝗲𝗻𝘁\n"
-            f"➻ 𝗮𝗱𝗺𝗶𝗻𝘀 𝗻𝗼𝘁 𝗮𝗳𝗳𝗲𝗰𝘁𝗲𝗱"
+            f"<blockquote>🤬 <b>𝖠𝖻𝗎𝗌𝖾 𝖣𝖾𝗍𝖾𝖼𝗍𝗂𝗈𝗇</b></blockquote>\n\n"
+            f"<i>𝖠𝖻𝗎𝗌𝗂𝗏𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖺𝗋𝖾 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝖽𝖾𝗅𝖾𝗍𝖾𝖽.</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/noabuse on</code> — <i>𝖤𝗇𝖺𝖻𝗅𝖾 𝗉𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇</i> ✅\n"
+            f"➻ <code>/noabuse off</code> — <i>𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝗉𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇</i> ❌\n\n"
+            f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+            f"➻ <i>𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖽𝖾𝗅𝖾𝗍𝖾𝖽 𝗂𝗇𝗌𝗍𝖺𝗇𝗍𝗅𝗒</i>\n"
+            f"➻ <i>𝟧-𝗌𝖾𝖼𝗈𝗇𝖽 𝗐𝖺𝗋𝗇𝗂𝗇𝗀 𝗌𝖾𝗇𝗍</i>\n"
+            f"➻ <i>𝖠𝖽𝗆𝗂𝗇𝗌 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖺𝖿𝖿𝖾𝖼𝗍𝖾𝖽</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -598,16 +593,14 @@ def register_handlers(app: Client):
     async def fsub_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f" 🔗 𝗳𝗼𝗿𝗰𝗲-𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲\n"
-            f"╚══════════════════╝\n\n"
-            f"𝘂𝘀𝗲𝗿𝘀 𝘄𝗵𝗼 𝗵𝗮𝘃𝗲𝗻'𝘁 𝗷𝗼𝗶𝗻𝗲𝗱 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱\n"
-            f"𝗰𝗵𝗮𝗻𝗻𝗲𝗹𝘀 𝗰𝗮𝗻𝗻𝗼𝘁 𝘀𝗲𝗻𝗱 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀.\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /addfsub @𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗼𝗿 [-100𝘅𝘅𝘅𝘅]\n"
-            f"➻ /removefsub @𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗼𝗿 [-100𝘅𝘅𝘅𝘅]\n"
-            f"➻ /fsublist — 𝗹𝗶𝘀𝘁 𝗰𝗵𝗮𝗻𝗻𝗲𝗹𝘀\n\n"
-            f"<i>𝗯𝗼𝘁 𝗺𝘂𝘀𝘁 𝗯𝗲 𝗮𝗱𝗺𝗶𝗻 𝗶𝗻 𝘁𝗵𝗲 𝗰𝗵𝗮𝗻𝗻𝗲𝗹</i>"
+            f"<blockquote>🔗 <b>𝖥𝗈𝗋𝖼𝖾 𝖲𝗎𝖻𝗌𝖼𝗋𝗂𝖻𝖾</b></blockquote>\n\n"
+            f"<i>𝖴𝗌𝖾𝗋𝗌 𝗐𝗁𝗈 𝗁𝖺𝗏𝖾𝗇'𝗍 𝗃𝗈𝗂𝗇𝖾𝖽 𝗍𝗁𝖾 𝗋𝖾𝗊𝗎𝗂𝗋𝖾𝖽\n"
+            f"𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌 𝖼𝖺𝗇𝗇𝗈𝗍 𝗌𝖾𝗇𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌.</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/addfsub @channel or [-100xxxx]</code>\n"
+            f"➻ <code>/removefsub @channel or [-100xxxx]</code>\n"
+            f"➻ <code>/fsublist</code> — <i>𝖫𝗂𝗌𝗍 𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌</i>\n\n"
+            f"<i>𝖡𝗈𝗍 𝗆𝗎𝗌𝗍 𝖻𝖾 𝖺𝖽𝗆𝗂𝗇 𝗂𝗇 𝗍𝗁𝖾 𝖼𝗁𝖺𝗇𝗇𝖾𝗅.</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -618,19 +611,15 @@ def register_handlers(app: Client):
     @app.on_callback_query(filters.regex(r"^utility_help\|(\w+)\|(\d+)$"))
     async def utility_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
-        text = (
-            f"╔══════════════════╗\n"
-            f"   ⚙️ 𝘂𝘁𝗶𝗹𝗶𝘁𝘆\n"
-            f"╚══════════════════╝\n\n"
-            f"➻ /chatinfo — 𝗴𝗿𝗼𝘂𝗽 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 &amp; 𝗺𝗲𝗺𝗯𝗲𝗿 𝗰𝗼𝘂𝗻𝘁\n"
-            f"➻ /id — 𝘆𝗼𝘂𝗿 𝗶𝗱 𝗼𝗿 𝗿𝗲𝗽𝗹𝗶𝗲𝗱 𝘂𝘀𝗲𝗿'𝘀 𝗶𝗱\n"
-            f"➻ /pin [𝘀𝗶𝗹𝗲𝗻𝘁] — 𝗽𝗶𝗻 𝗮 𝗿𝗲𝗽𝗹𝗶𝗲𝗱 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-            f"➻ /unpin — 𝘂𝗻𝗽𝗶𝗻 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝗼𝗿 𝗮𝗹𝗹 𝗽𝗶𝗻𝘀\n"
-            f"➻ /purge — 𝗯𝘂𝗹𝗸 𝗱𝗲𝗹𝗲𝘁𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀\n"
-            f"➻ /del — 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮 𝗿𝗲𝗽𝗹𝗶𝗲𝗱 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-            f"➻ /report — 𝗿𝗲𝗽𝗼𝗿𝘁 𝗮 𝘂𝘀𝗲𝗿 𝘁𝗼 𝗮𝗱𝗺𝗶𝗻𝘀\n"
-            f"➻ /calc &lt;𝗲𝘅𝗽𝗿&gt; — 𝗰𝗮𝗹𝗰𝘂𝗹𝗮𝘁𝗼𝗿\n\n"
-            f"<i>𝗽𝗶𝗻, 𝗽𝘂𝗿𝗴𝗲, 𝗱𝗲𝗹 — 𝗮𝗱𝗺𝗶𝗻 𝗼𝗻𝗹𝘆</i>"
+        text =
+        f"<blockquote>⚙️ <b>𝖴𝗍𝗂𝗅𝗂𝗍𝗒</b></blockquote>\n\n"
+        f"➻ <code>/chatinfo</code> — <i>𝖦𝗋𝗈𝗎𝗉 𝖽𝖾𝗍𝖺𝗂𝗅𝗌 &amp; 𝗆𝖾𝗆𝖻𝖾𝗋 𝖼𝗈𝗎𝗇𝗍</i>\n    f"➻ <code>/id</code> — <i>𝖸𝗈𝗎𝗋 𝖨𝖣 𝗈𝗋 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗎𝗌𝖾𝗋'𝗌 𝖨𝖣</i>\n"
+        f"➻ <code>/pin [silent]</code> — <i>𝖯𝗂𝗇 𝖺 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n      f"➻ <code>/unpin</code> — <i>𝖴𝗇𝗉𝗂𝗇 𝗆𝖾𝗌𝗌𝖺𝗀𝖾 𝗈𝗋 𝖺𝗅𝗅 𝗉𝗂𝗇𝗌</i>\n"
+        f"➻ <code>/purge</code> — <i>𝖡𝗎𝗅𝗄 𝖽𝖾𝗅𝖾𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌</i>\n"
+        f"➻ <code>/del</code> — <i>𝖣𝖾𝗅𝖾𝗍𝖾 𝖺 𝗋𝖾𝗉𝗅𝗂𝖾𝖽 𝗆𝖾𝗌𝗌𝖺𝗀𝖾</i>\n"
+        f"➻ <code>/report</code> — <i>𝖱𝖾𝗉𝗈𝗋𝗍 𝖺 𝗎𝗌𝖾𝗋 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇𝗌</i>\n"
+        f"➻ <code>/calc &lt;expr&gt;</code> — <i>𝖢𝖺𝗅𝖼𝗎𝗅𝖺𝗍𝗈𝗋</i>\n\n"
+        f"<i>𝖯𝗂𝗇, 𝗉𝗎𝗋𝗀𝖾, 𝖽𝖾𝗅 — 𝖠𝖽𝗆𝗂𝗇 𝗈𝗇𝗅𝗒</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -642,18 +631,16 @@ def register_handlers(app: Client):
     async def cleaner_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  🧹 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝗰𝗹𝗲𝗮𝗻𝗲𝗿\n"
-            f"╚══════════════════╝\n\n"
-            f"𝗮𝗹𝗹 𝗿𝗲𝗴𝘂𝗹𝗮𝗿 𝘂𝘀𝗲𝗿 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗮𝗿𝗲 𝗱𝗲𝗹𝗲𝘁𝗲𝗱\n"
-            f"𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 𝗮𝗳𝘁𝗲𝗿 𝗮 𝘀𝗲𝘁 𝗱𝗲𝗹𝗮𝘆.\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /cleaner 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 ✅\n"
-            f"➻ /cleaner 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❌\n"
-            f"➻ /setcleandelay <time> — 𝘀𝗲𝘁 𝗱𝗲𝗹𝗮𝘆\n"
-            f"➻ /cleanstatus — 𝘀𝗵𝗼𝘄 𝘀𝗲𝘁𝘁𝗶𝗻𝗴𝘀\n\n"
-            f"➻ 𝗮𝗱𝗺𝗶𝗻 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗮𝗿𝗲 𝗻𝗲𝘃𝗲𝗿 𝗱𝗲𝗹𝗲𝘁𝗲𝗱\n"
-            f"➻ 𝗿𝗮𝗻𝗴𝗲: 1𝗺 𝘁𝗼 24𝗵 — 𝗱𝗲𝗳𝗮𝘂𝗹𝘁: 5𝗺"
+            f"<blockquote>🧹 <b>𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖢𝗅𝖾𝖺𝗇𝖾𝗋</b></blockquote>\n\n"
+            f"<i>𝖠𝗅𝗅 𝗋𝖾𝗀𝗎𝗅𝖺𝗋 𝗎𝗌𝖾𝗋 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖺𝗋𝖾 𝖽𝖾𝗅𝖾𝗍𝖾𝖽\n"
+            f"𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝖺𝖿𝗍𝖾𝗋 𝖺 𝗌𝖾𝗍 𝖽𝖾𝗅𝖺𝗒.</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/cleaner on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 ✅\n"
+            f"➻ <code>/cleaner off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 ❌\n"
+            f"➻ <code>/setcleandelay &lt;time&gt;</code> — 𝖲𝖾𝗍 𝖽𝖾𝗅𝖺𝗒\n"
+            f"➻ <code>/cleanstatus</code> — 𝖲𝗁𝗈𝗐 𝗌𝖾𝗍𝗍𝗂𝗇𝗀𝗌\n"
+            f"➻ 𝖠𝖽𝗆𝗂𝗇 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖺𝗋𝖾 𝗇𝖾𝗏𝖾𝗋 𝖽𝖾𝗅𝖾𝗍𝖾𝖽\n"
+            f"➻ 𝖱𝖺𝗇𝗀𝖾: 1𝗆 𝗍𝗈 24𝗁 — 𝖣𝖾𝖿𝖺𝗎𝗅𝗍: 5𝗆"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -665,17 +652,16 @@ def register_handlers(app: Client):
     async def longmsg_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"📄 𝗹𝗼𝗻𝗴 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-            f"╚══════════════════╝\n\n"
-            f"𝗹𝗼𝗻𝗴 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗮𝗿𝗲 𝘂𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝘁𝗼 𝘁𝗲𝗹𝗲𝗴𝗿𝗮𝗽𝗵\n"
-            f"𝗮𝗻𝗱 𝘀𝗲𝗻𝘁 𝗮𝘀 𝗮 𝗹𝗶𝗻𝗸 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆.\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /setlongmode 𝗼𝗳𝗳 — 𝗻𝗼 𝗮𝗰𝘁𝗶𝗼𝗻\n"
-            f"➻ /setlongmode 𝗺𝗮𝗻𝘂𝗮𝗹 — 𝗱𝗲𝗹𝗲𝘁𝗲 + 𝘄𝗮𝗿𝗻\n"
-            f"➻ /setlongmode 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰 — 𝗱𝗲𝗹𝗲𝘁𝗲 + 𝗹𝗶𝗻𝗸 ✅\n"
-            f"➻ /setlonglimit <200–4000> — 𝘀𝗲𝘁 𝗹𝗶𝗺𝗶𝘁\n\n"
-            f"<i>𝗱𝗲𝗳𝗮𝘂𝗹𝘁 𝗹𝗶𝗺𝗶𝘁: 800 𝗰𝗵𝗮𝗿𝗮𝗰𝘁𝗲𝗿𝘀</i>"
+            f"<blockquote>📄 <b>𝖫𝗈𝗇𝗀 𝖬𝖾𝗌𝗌𝖺𝗀𝖾</b></blockquote>\n\n"
+            f"<i>𝖫𝗈𝗇𝗀 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖺𝗋𝖾 𝗎𝗉𝗅𝗈𝖺𝖽𝖾𝖽 𝗍𝗈 𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗉𝗁\n"
+            f"𝖺𝗇𝖽 𝗌𝖾𝗇𝗍 𝖺𝗌 𝖺 𝗅𝗂𝗇𝗄 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒.</i>\n\n"
+            f"<blockquote expandable>"
+            f"❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/setlongmode off</code> — 𝖭𝗈 𝖺𝖼𝗍𝗂𝗈𝗇\n"
+            f"➻ <code>/setlongmode manual</code> — 𝖣𝖾𝗅𝖾𝗍𝖾 + 𝗐𝖺𝗋𝗇\n"
+            f"➻ <code>/setlongmode automatic</code> — 𝖣𝖾𝗅𝖾𝗍𝖾 + 𝗅𝗂𝗇𝗄 ✅\n"
+            f"➻ <code>/setlonglimit &lt;200–4000&gt;</code> — 𝖲𝖾𝗍 𝗅𝗂𝗆𝗂𝗍\n"
+            f"<i>𝖣𝖾𝖿𝖺𝗎𝗅𝗍 𝗅𝗂𝗆𝗂𝗍: 800 𝖼𝗁𝖺𝗋𝖺𝖼𝗍𝖾𝗋𝗌</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -687,14 +673,12 @@ def register_handlers(app: Client):
     async def hashtag_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  # 𝗵𝗮𝘀𝗵𝘁𝗮𝗴 𝗳𝗶𝗹𝘁𝗲𝗿\n"
-            f"╚══════════════════╝\n\n"
-            f"𝗵𝗮𝘀𝗵𝘁𝗮𝗴 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗮𝗿𝗲 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 𝗱𝗲𝗹𝗲𝘁𝗲𝗱.\n\n"
-            f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-            f"➻ /nohashtags 𝗼𝗻 — 𝗯𝗹𝗼𝗰𝗸 ✅\n"
-            f"➻ /nohashtags 𝗼𝗳𝗳 — 𝗮𝗹𝗹𝗼𝘄 ❌\n\n"
-            f"➻ 𝗮𝗻𝘆 𝘄𝗼𝗿𝗱 𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝘄𝗶𝘁𝗵 #"
+            f"<blockquote>🔖 <b>𝖧𝖺𝗌𝗁𝗍𝖺𝗀 𝖥𝗂𝗅𝗍𝖾𝗋</b></blockquote>\n\n"
+            f"<i>𝖧𝖺𝗌𝗁𝗍𝖺𝗀 𝗆𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖺𝗋𝖾 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝖽𝖾𝗅𝖾𝗍𝖾𝖽.</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/nohashtags on</code> — 𝖡𝗅𝗈𝖼𝗄 ✅\n"
+            f"➻ <code>/nohashtags off</code> — 𝖠𝗅𝗅𝗈𝗐 ❌\n\n"
+            f"➻ 𝖠𝗇𝗒 𝗐𝗈𝗋𝖽 𝗌𝗍𝖺𝗋𝗍𝗂𝗇𝗀 𝗐𝗂𝗍𝗁 #"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -706,10 +690,8 @@ def register_handlers(app: Client):
     async def echo_help_callback(client, callback_query):
         page = int(callback_query.matches[0].group(1))
         text = (
-            f"╔══════════════════╗\n"
-            f"  🚧 𝗲𝗰𝗵𝗼\n"
-            f"╚══════════════════╝\n\n"
-            f"➻ /echo <text> — 𝗲𝗰𝗵𝗼 𝘁𝗲𝘅𝘁 𝗮𝘀 𝗯𝗼𝘁"
+            f"<blockquote>🚧 <b>𝖤𝖼𝗁𝗈</b></blockquote>\n\n"
+            f"➻ <code>/echo &lt;text&gt;</code> — <i>𝖤𝖼𝗁𝗈 𝗍𝖾𝗑𝗍 𝖺𝗌 𝖻𝗈𝗍</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -721,13 +703,12 @@ def register_handlers(app: Client):
     async def cmd_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  🗑️ 𝗰𝗺𝗱 𝗱𝗲𝗹𝗲𝘁𝗲𝗿\n"
-            f"╚══════════════════╝\n\n"
-            f"𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 <code>/</code> <code>!</code> <code>.</code> 𝗮𝘂𝘁𝗼 𝗱𝗲𝗹𝗲𝘁𝗲𝗱.\n\n"
-            f"➻ /cmd 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 ✅\n"
-            f"➻ /cmd 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❌\n\n"
-            f"<i>𝗮𝗱𝗺𝗶𝗻𝘀 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗮𝗳𝗳𝗲𝗰𝘁𝗲𝗱.</i>"
+            f"<blockquote>🗑️ <b>𝖢𝗆𝖽 𝖣𝖾𝗅𝖾𝗍𝖾𝗋</b></blockquote>\n\n"
+            f"<i>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 <code>/</code> <code>!</code> <code>.</code> 𝖺𝗋𝖾 𝖺𝗎𝗍𝗈 𝖽𝖾𝗅𝖾𝗍𝖾𝖽.</i>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/cmd on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 ✅\n"
+            f"➻ <code>/cmd off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 ❌\n\n"
+            f"<i>𝖠𝖽𝗆𝗂𝗇𝗌 𝖺𝗋𝖾 𝗇𝗈𝗍 𝖺𝖿𝖿𝖾𝖼𝗍𝖾𝖽.</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -739,14 +720,13 @@ def register_handlers(app: Client):
     async def mediadelete_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  🎬 𝗺𝗲𝗱𝗶𝗮 𝗮𝘂𝘁𝗼-𝗱𝗲𝗹𝗲𝘁𝗲\n"
-            f"╚══════════════════╝\n\n"
-            f"➻ /mediadelete 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 ✅\n"
-            f"➻ /mediadelete 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❌\n"
-            f"➻ /setmediadelay <time> — 𝘀𝗲𝘁 𝗱𝗲𝗹𝗮𝘆\n\n"
-            f"➻ 𝗽𝗵𝗼𝘁𝗼𝘀, 𝘃𝗶𝗱𝗲𝗼𝘀, 𝘀𝘁𝗶𝗰𝗸𝗲𝗿𝘀, 𝗴𝗶𝗳𝘀\n"
-            f"<i>𝗿𝗮𝗻𝗴𝗲: 1𝗺 𝘁𝗼 24𝗵 — 𝗱𝗲𝗳𝗮𝘂𝗹𝘁: 5𝗺</i>"
+            f"<blockquote>🎬 <b>𝖬𝖾𝖽𝗂𝖺 𝖠𝗎𝗍𝗈-𝖣𝖾𝗅𝖾𝗍𝖾</b></blockquote>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/mediadelete on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 ✅\n"
+            f"➻ <code>/mediadelete off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 ❌\n"
+            f"➻ <code>/setmediadelay &lt;time&gt;</code> — 𝖲𝖾𝗍 𝖽𝖾𝗅𝖺𝗒\n\n"
+            f"➻ 𝖯𝗁𝗈𝗍𝗈𝗌, 𝗏𝗂𝖽𝖾𝗈𝗌, 𝗌𝗍𝗂𝖼𝗄𝖾𝗋𝗌, 𝖦𝖨𝖥𝗌\n"
+            f"<i>𝖱𝖺𝗇𝗀𝖾: 1𝗆 𝗍𝗈 24𝗁 — 𝖣𝖾𝖿𝖺𝗎𝗅𝗍: 5𝗆</i>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -758,13 +738,12 @@ def register_handlers(app: Client):
     async def phone_help_callback(client, callback_query):
         category, page = callback_query.matches[0].group(1), int(callback_query.matches[0].group(2))
         text = (
-            f"╔══════════════════╗\n"
-            f"  📵 𝗽𝗵𝗼𝗻𝗲 𝗽𝗿𝗼𝘁𝗲𝗰𝘁𝗶𝗼𝗻\n"
-            f"╚══════════════════╝\n\n"
-            f"➻ /nophone 𝗼𝗻 — 𝗯𝗹𝗼𝗰𝗸 ✅\n"
-            f"➻ /nophone 𝗼𝗳𝗳 — 𝗮𝗹𝗹𝗼𝘄 ❌\n\n"
-            f"➻ +91 9876543210\n"
-            f"➻ +1-234-567-8900"
+            f"<blockquote>📵 <b>𝖯𝗁𝗈𝗇𝖾 𝖯𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇</b></blockquote>\n\n"
+            f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+            f"➻ <code>/nophone on</code> — 𝖡𝗅𝗈𝖼𝗄 ✅\n"
+            f"➻ <code>/nophone off</code> — 𝖠𝗅𝗅𝗈𝗐 ❌\n\n"
+            f"➻ <code>+91 9876543210</code>\n"
+            f"➻ <code>+1-234-567-8900</code>"
         )
         await callback_query.message.edit_media(
             InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML),
@@ -1087,9 +1066,11 @@ def register_handlers(app: Client):
             "➻ <code>/overall</code> — ᴛᴏᴘ ʙᴀʟᴀɴᴄᴇꜱ ᴀᴄʀᴏꜱꜱ ᴀʟʟ ᴄʜᴀᴛꜱ"
         ),
     }
-
-    def build_eco_menu():
-        text = "💰 <b>ᴇᴄᴏɴᴏᴍʏ</b>\n\nᴄʜᴏᴏꜱᴇ ᴀ ꜱᴇᴄᴛɪᴏɴ:"
+    def build_eco_
+        text = (
+            "<blockquote>💰 <b>𝖤𝖼𝗈𝗇𝗈𝗆𝗒</b></blockquote>\n\n"
+            "𝖢𝗁𝗈𝗈𝗌𝖾 𝖺 𝗌𝖾𝖼𝗍𝗂𝗈𝗇:"
+        )
         rows = [
             [
                 InlineKeyboardButton("💰 ʙᴀʟᴀɴᴄᴇ", callback_data="eco_balance", style=ButtonStyle.PRIMARY),
