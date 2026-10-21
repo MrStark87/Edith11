@@ -56,31 +56,24 @@ def fmt_flood_time(seconds: int) -> str:
 
 
 ANTIFLOOD_HELP_TEXT = (
-    f"╔══════════════════╗\n"
-    f".   🌊 𝗔𝗻𝘁𝗶 𝗙𝗹𝗼𝗼𝗱\n"
-    f"╚══════════════════╝\n\n"
-
-    f"𝘂𝘀𝗲𝗿𝘀 𝘄𝗵𝗼 𝘀𝗲𝗻𝗱 𝘁𝗼𝗼 𝗺𝗮𝗻𝘆\n"
-    f"𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗶𝗻 10 𝘀𝗲𝗰𝗼𝗻𝗱𝘀 𝗮𝗿𝗲\n"
-    f"𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 𝗮𝗰𝘁𝗶𝗼𝗻𝗲𝗱.\n\n"
-
-    f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    f"➻ /antiflood 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 ✅\n"
-    f"➻ /antiflood 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 ❌\n"
-    f"➻ /setflood <𝗻𝘂𝗺𝗯𝗲𝗿> — 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗮𝗹𝗹𝗼𝘄𝗲𝗱 𝗽𝗲𝗿 10𝘀\n"
-    f"➻ /floodaction <𝗺𝘂𝘁𝗲/𝗸𝗶𝗰𝗸/𝗯𝗮𝗻/𝘄𝗮𝗿𝗻> — 𝗮𝗰𝘁𝗶𝗼𝗻 𝘁𝗼 𝘁𝗮𝗸𝗲\n"
-    f"➻ /floodtime <𝘁𝗶𝗺𝗲> — 𝗺𝘂𝘁𝗲/𝗯𝗮𝗻 𝗱𝘂𝗿𝗮𝘁𝗶𝗼𝗻\n"
-    f"➻ /floodmode <𝘀𝘁𝗿𝗶𝗰𝘁/𝗻𝗼𝗿𝗺𝗮𝗹> — 𝗱𝗲𝘁𝗲𝗰𝘁𝗶𝗼𝗻 𝗺𝗼𝗱𝗲\n"
-    f"➻ /flood — 𝘃𝗶𝗲𝘄 𝗰𝘂𝗿𝗿𝗲𝗻𝘁 𝘀𝗲𝘁𝘁𝗶𝗻𝗴𝘀\n"
-    f"➻ /floodwhitelist <𝗮𝗱𝗱/𝗿𝗲𝗺𝗼𝘃𝗲/𝗹𝗶𝘀𝘁> — 𝗲𝘅𝗲𝗺𝗽𝘁 𝘂𝘀𝗲𝗿𝘀\n\n"
-
-    f"❖ 𝗺𝗼𝗱𝗲𝘀 ❖\n"
-    f"➻ 𝗻𝗼𝗿𝗺𝗮𝗹 — 𝗮𝗻𝘆 𝗿𝗮𝗽𝗶𝗱 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗰𝗼𝘂𝗻𝘁\n"
-    f"➻ 𝘀𝘁𝗿𝗶𝗰𝘁 — 𝗼𝗻𝗹𝘆 𝗿𝗲𝗽𝗲𝗮𝘁𝗲𝗱/𝘀𝗮𝗺𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗰𝗼𝘂𝗻𝘁\n\n"
-
-    f"<i>👮 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻𝘀 𝗰𝗮𝗻 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲 𝘁𝗵𝗶𝘀</i>"
+    f"<blockquote>🌊 <b>𝖠𝗇𝗍𝗂 𝖥𝗅𝗈𝗈𝖽 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
+    f"𝖴𝗌𝖾𝗋𝗌 𝖶𝗁𝗈 𝖲𝖾𝗇𝖽 𝖳𝗈𝗈 𝖬𝖺𝗇𝗒\n"
+    f"𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖨𝗇 10 𝖲𝖾𝖼𝗈𝗇𝖽𝗌 𝖠𝗋𝖾\n"
+    f"𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 𝖠𝖼𝗍𝗂𝗈𝗇𝖾𝖽.\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/antiflood on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 ✅\n"
+    f"➻ <code>/antiflood off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 ❌\n"
+    f"➻ <code>/setflood {{number}}</code> — 𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖠𝗅𝗅𝗈𝗐𝖾𝖽 𝖯𝖾𝗋 10𝗌\n"
+    f"➻ <code>/floodaction {{mute/kick/ban/warn}}</code> — 𝖠𝖼𝗍𝗂𝗈𝗇 𝖳𝗈 𝖳𝖺𝗄𝖾\n"
+    f"➻ <code>/floodtime {{time}}</code> — 𝖬𝗎𝗍𝖾/𝖡𝖺𝗇 𝖣𝗎𝗋𝖺𝗍𝗂𝗈𝗇\n"  
+    f"➻ <code>/floodmode {{strict/normal}}</code> — 𝖣𝖾𝗍𝖾𝖼𝗍𝗂𝗈𝗇 𝖬𝗈𝖽𝖾\n"
+    f"➻ <code>/flood</code> — 𝖵𝗂𝖾𝗐 𝖢𝗎𝗋𝗋𝖾𝗇𝗍 𝖲𝖾𝗍𝗍𝗂𝗇𝗀𝗌\n"
+    f"➻ <code>/floodwhitelist {{add/remove/list}}</code> — 𝖤𝗑𝖾𝗆𝗉𝗍 𝖴𝗌𝖾𝗋𝗌\n\n"
+    f"<blockquote expandable>❖ <b>𝖬𝗈𝖽𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖭𝗈𝗋𝗆𝖺𝗅 — 𝖠𝗇𝗒 𝖱𝖺𝗉𝗂𝖽 𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖢𝗈𝗎𝗇𝗍\n"
+    f"➻ 𝖲𝗍𝗋𝗂𝖼𝗍 — 𝖮𝗇𝗅𝗒 𝖱𝖾𝗉𝖾𝖺𝗍𝖾𝖽/𝖲𝖺𝗆𝖾 𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌 𝖢𝗈𝗎𝗇𝗍\n\n"
+    f"<i>👮 𝖮𝗇𝗅𝗒 𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝖺𝗇 𝖢𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖾 𝖳𝗁𝗂𝗌</i>"
 )
-
 
 async def _take_flood_action(client, chat_id: int, user_id: int, action: str, mute_time: int):
     try:
