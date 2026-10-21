@@ -21,12 +21,13 @@ def register_handlers(app: Client):
     # ==========================================================
     async def send_start_menu(message, user):
         text = (
-            f"<emoji id=5440431182602842059>👋</emoji> Hello {user}!\n"
-            f"<a href='https://t.me/EdithHelpsBot'>Edith</a> is the most complete Bot to help you manage your groups easily and safely!\n\n"
-            f"<emoji id=6158862632926319619>👉</emoji> Add me in a Supergroup and promote me as Admin to let me get in action!\n\n"
-            f"<emoji id=5436113877181941026>❓</emoji> WHICH ARE THE COMMANDS? <emoji id=5436113877181941026>❓</emoji>\n"
-            f"<emoji id=5895693025874546160>🟠</emoji> Press /help to see all the commands and how they work!\n"
-            f"<emoji id=5956561916573782596>📄</emoji> <a href='https://graph.org/Anya-Bots---Privacy-Policy-04-12'>Privacy Policy</a>"
+            f"<blockquote expandable><b>✨ 𝖧𝖾𝗅𝗅𝗈 {user} </b></blockquote>/n"
+            f"<b>❍</b> 𝖨'𝗆 <a href='https://t.me/EdithHelpsBot'>𝖤𝖽𝗂𝗍𝗁 𝖲𝖾𝖼𝗎𝗋𝗂𝗍𝗒 𝖡𝗈𝗍 🤖</a> 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉 𝖺𝖽𝗏𝖺𝗇𝖼𝖾𝖽 𝗌𝖾𝖼𝗎𝗋𝗂𝗍𝗒 𝖺𝗇𝖽 𝗆𝖺𝗇𝖺𝗀𝖾𝗆𝖾𝗇𝗍 𝖻𝗈𝗍./n/n"
+            f"<b>➣ <u>𝖨 𝖼𝖺𝗇 𝗁𝖾𝗅𝗉 𝗒𝗈𝗎 𝗐𝗂𝗍𝗁:</u></b>/n"
+            f"<blockquote expandable><b>⦸ 𝖠𝗇𝗍𝗂 𝖠𝖻𝗎𝗌𝖾 & 𝖠𝗇𝗍𝗂 𝖱𝖺𝗂𝖽.</b>/n/n"
+            f"<b>♧ 𝖡𝗂𝗈𝗅𝗂𝗇𝗄 𝖯𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇 & 𝖫𝗂𝗇𝗄 𝖯𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇.</b>/n/n"
+            f"<b>♙ 𝖦𝗋𝗈𝗎𝗉 𝖫𝗈𝖼𝗄, 𝖡𝗎𝗅𝗄 𝖯𝗎𝗋𝗀𝗂𝗇𝗀, 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 𝖣𝖾𝗅𝖾𝗍𝖾</b></blockquote>/n"
+            f"<b>⇩</b> 𝖭𝖾𝖾𝖽 𝖧𝖾𝗅𝗉? 𝖴𝗌𝖾 𝗍𝗁𝖾 𝖻𝗎𝗍𝗍𝗈𝗇 𝖻𝖾𝗅𝗈𝗐 𝗈𝗋 𝗌𝖾𝗇𝖽 /help"
         )
         buttons = InlineKeyboardMarkup([
             [InlineKeyboardButton("✙ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ✙", url=f"https://t.me/{BOT_USERNAME}?startgroup=true", style=ButtonStyle.PRIMARY)],
