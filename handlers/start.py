@@ -1066,28 +1066,28 @@ def register_handlers(app: Client):
             "➻ <code>/overall</code> — ᴛᴏᴘ ʙᴀʟᴀɴᴄᴇꜱ ᴀᴄʀᴏꜱꜱ ᴀʟʟ ᴄʜᴀᴛꜱ"
         ),
     }
-    def build_eco_
+    def build_eco_menu():
         text = (
             "<blockquote>💰 <b>𝖤𝖼𝗈𝗇𝗈𝗆𝗒</b></blockquote>\n\n"
             "𝖢𝗁𝗈𝗈𝗌𝖾 𝖺 𝗌𝖾𝖼𝗍𝗂𝗈𝗇:"
         )
         rows = [
             [
-                InlineKeyboardButton("💰 ʙᴀʟᴀɴᴄᴇ", callback_data="eco_balance", style=ButtonStyle.PRIMARY),
-                InlineKeyboardButton("💵 ᴇᴀʀɴɪɴɢꜱ", callback_data="eco_earnings", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("💰 𝖡𝖺𝗅𝖺𝗇𝖼𝖾", callback_data="eco_balance", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("💵 𝖤𝖺𝗋𝗇𝗂𝗇𝗀𝗌", callback_data="eco_earnings", style=ButtonStyle.PRIMARY),
             ],
             [
-                InlineKeyboardButton("🛒 ꜱʜᴏᴘ", callback_data="eco_shop", style=ButtonStyle.PRIMARY),
-                InlineKeyboardButton("🏦 ʙᴀɴᴋ", callback_data="eco_bank", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("🛒 𝖲𝗁𝗈𝗉", callback_data="eco_shop", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("🏦 𝖡𝖺𝗇𝗄", callback_data="eco_bank", style=ButtonStyle.PRIMARY),
             ],
             [
-                InlineKeyboardButton("🎁 ɢɪꜰᴛ", callback_data="eco_gift", style=ButtonStyle.PRIMARY),
-                InlineKeyboardButton("💞 ꜰᴜɴ", callback_data="eco_fun", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("🎁 𝖦𝗂𝖿𝗍", callback_data="eco_gift", style=ButtonStyle.PRIMARY),
+                InlineKeyboardButton("💞 𝖥𝗎𝗇", callback_data="eco_fun", style=ButtonStyle.PRIMARY),
             ],
-            [InlineKeyboardButton("🏆 ʟᴇᴀᴅᴇʀʙᴏᴀʀᴅ", callback_data="eco_leaderboard", style=ButtonStyle.PRIMARY)],
+            [InlineKeyboardButton("🏆 𝖫𝖾𝖺𝖽𝖾𝗋𝖻𝗈𝖺𝗋𝖽", callback_data="eco_leaderboard", style=ButtonStyle.PRIMARY)],
             [
-                InlineKeyboardButton("🔙 ʙᴀᴄᴋ", callback_data="help_categories", style=ButtonStyle.DANGER),
-                InlineKeyboardButton("✖ ᴄʟᴏꜱᴇ", callback_data="help_close", style=ButtonStyle.DANGER),
+                InlineKeyboardButton("🔙 𝖡𝖺𝖼𝗄", callback_data="help_categories", style=ButtonStyle.DANGER),
+                InlineKeyboardButton("✖ 𝖢𝗅𝗈𝗌𝖾", callback_data="help_close", style=ButtonStyle.DANGER),
             ],
         ]
         return text, InlineKeyboardMarkup(rows)
@@ -1104,8 +1104,8 @@ def register_handlers(app: Client):
         key = callback_query.data
         text = ECO_HELP_TEXTS.get(key, "⚠️ ɴᴏᴛ ꜰᴏᴜɴᴅ.")
         buttons = InlineKeyboardMarkup([[
-            InlineKeyboardButton("« ʙᴀᴄᴋ", callback_data="eco_menu", style=ButtonStyle.PRIMARY),
-            InlineKeyboardButton("✖ ᴄʟᴏꜱᴇ", callback_data="help_close", style=ButtonStyle.DANGER),
+            InlineKeyboardButton("« 𝖡𝖺𝖼𝗄", callback_data="eco_menu", style=ButtonStyle.PRIMARY),
+            InlineKeyboardButton("✖ 𝖢𝗅𝗈𝗌𝖾", callback_data="help_close", style=ButtonStyle.DANGER),
         ]])
         media = InputMediaPhoto(media=START_IMAGE, caption=text, parse_mode=enums.ParseMode.HTML)
         await callback_query.message.edit_media(media=media, reply_markup=buttons)
