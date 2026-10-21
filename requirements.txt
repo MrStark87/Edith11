@@ -1,0 +1,11 @@
+tgcrypto==1.2.5
+motor==3.1.1
+pymongo[srv]==4.6.3
+python-dotenv==1.0.1
+aiohttp==3.9.3
+groq
+pyrotgfork==2.2.24
+pytz
+requests
+Pillow
+telegraph
