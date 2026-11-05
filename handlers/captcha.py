@@ -18,26 +18,23 @@ import random
 logger = logging.getLogger(__name__)
 
 CAPTCHA_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "   🤖 𝗰𝗮𝗽𝘁𝗰𝗵𝗮 𝘀𝘆𝘀𝘁𝗲𝗺\n"
-    "╚══════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /captcha 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 𝗰𝗮𝗽𝘁𝗰𝗵𝗮 ✅\n"
-    "➻ /captcha 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗰𝗮𝗽𝘁𝗰𝗵𝗮 ❌\n"
-    "➻ /captchatime <seconds> — 𝘀𝗲𝘁 𝘁𝗶𝗺𝗲𝗼𝘂𝘁\n\n"
-    "❖ 𝗵𝗼𝘄 𝗶𝘁 𝘄𝗼𝗿𝗸𝘀 ❖\n"
-    "➻ 𝗻𝗲𝘄 𝗺𝗲𝗺𝗯𝗲𝗿 𝗷𝗼𝗶𝗻𝘀 → 𝗺𝘂𝘁𝗲𝗱 𝗶𝗻𝘀𝘁𝗮𝗻𝘁𝗹𝘆\n"
-    "➻ 𝗺𝘂𝘀𝘁 𝘀𝗼𝗹𝘃𝗲 𝗺𝗮𝘁𝗵 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻 𝘁𝗼 𝘂𝗻𝗺𝘂𝘁𝗲\n"
-    "➻ 𝗳𝗮𝗶𝗹𝘀/timeout → 𝗸𝗶𝗰𝗸𝗲𝗱 𝗳𝗿𝗼𝗺 𝗴𝗿𝗼𝘂𝗽\n"
+    f"<blockquote>🤖 <b>𝖢𝖺𝗉𝗍𝖼𝗁𝖺 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/captcha on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 𝖢𝖺𝗉𝗍𝖼𝗁𝖺 ✅\n"
+    f"➻ <code>/captcha off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖢𝖺𝗉𝗍𝖼𝗁𝖺 ❌\n"
+    f"➻ <code>/captchatime &lt;seconds&gt;</code> — 𝖲𝖾𝗍 𝖳𝗂𝗆𝖾𝗈𝗎𝗍\n\n"
+    f"<blockquote expandable>❖ <b>𝖧𝗈𝗐 𝖨𝗍 𝖶𝗈𝗋𝗄𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖭𝖾𝗐 𝖬𝖾𝗆𝖻𝖾𝗋 𝖩𝗈𝗂𝗇𝗌 → 𝖬𝗎𝗍𝖾𝖽 𝖨𝗇𝗌𝗍𝖺𝗇𝗍𝗅𝗒\n"
+    f"➻ 𝖬𝗎𝗌𝗍 𝖲𝗈𝗅𝗏𝖾 𝖬𝖺𝗍𝗁 𝖰𝗎𝖾𝗌𝗍𝗂𝗈𝗇 𝖳𝗈 𝖴𝗇𝗆𝗎𝗍𝖾\n"
+    f"➻ 𝖥𝖺𝗂𝗅𝗌 / 𝖳𝗂𝗆𝖾𝗈𝗎𝗍 → 𝖪𝗂𝖼𝗄𝖾𝖽 𝖥𝗋𝗈𝗆 𝖦𝗋𝗈𝗎𝗉"
 )
 
 
 CAPTCHA_TEXT = (
-    "➻ /captcha 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 𝗰𝗮𝗽𝘁𝗰𝗵𝗮 ✅\n"
-    "➻ /captcha 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗰𝗮𝗽𝘁𝗰𝗵𝗮 ❌\n"
-    "➻ /captchatime <seconds> — 𝘀𝗲𝘁 𝘁𝗶𝗺𝗲𝗼𝘂𝘁\n\n"
+    f"➻ <code>/captcha on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 𝖢𝖺𝗉𝗍𝖼𝗁𝖺 ✅\n"
+    f"➻ <code>/captcha off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖢𝖺𝗉𝗍𝖼𝗁𝖺 ❌\n"
+    f"➻ <code>/captchatime &lt;seconds&gt;</code> — 𝖲𝖾𝗍 𝖳𝗂𝗆𝖾𝗈𝗎𝗍\n\n"
 )
-
 
 async def is_power(client, chat_id: int, user_id: int) -> bool:
     try:
