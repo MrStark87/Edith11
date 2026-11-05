@@ -13,20 +13,17 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
 NOTES_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "   📝 𝗻𝗼𝘁𝗲𝘀 𝘀𝘆𝘀𝘁𝗲𝗺\n"
-    "╚══════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /save &lt;𝗻𝗮𝗺𝗲&gt; &lt;𝘁𝗲𝘅𝘁&gt;\n"
-    "➻ 𝗼𝗿 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝗮𝗻𝘆 𝗺𝗲𝘀𝘀𝗮𝗴𝗲/media 𝘄𝗶𝘁𝗵 /save &lt;𝗻𝗮𝗺𝗲&gt;\n\n"
-    "➻ /get &lt;𝗻𝗮𝗺𝗲&gt; 𝗼𝗿 #𝗻𝗮𝗺𝗲 — 𝘃𝗶𝗲𝘄 𝗮 𝗻𝗼𝘁𝗲\n\n"
-    "➻ /notes — 𝗹𝗶𝘀𝘁 𝗮𝗹𝗹 𝗻𝗼𝘁𝗲𝘀\n\n"
-    "➻ /delnote &lt;𝗻𝗮𝗺𝗲&gt; — 𝗱𝗲𝗹𝗲𝘁𝗲 𝗮 𝗻𝗼𝘁𝗲\n\n"
-    "❖ 𝘀𝘂𝗽𝗽𝗼𝗿𝘁𝗲𝗱 𝘁𝘆𝗽𝗲𝘀 ❖\n"
-    "➻ 𝘁𝗲𝘅𝘁 (𝗛𝗧𝗠𝗟), 𝗽𝗵𝗼𝘁𝗼, 𝘃𝗶𝗱𝗲𝗼,\n"
-    "➻ 𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁, 𝗮𝘂𝗱𝗶𝗼, 𝘀𝘁𝗶𝗰𝗸𝗲𝗿, 𝗚𝗜𝗙"
+    f"<blockquote>📝 <b>𝖭𝗈𝗍𝖾𝗌 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/save <𝗻𝗮𝗺𝗲> <𝘁𝗲𝘅𝘁></code>\n"
+    f"➻ 𝖮𝗋 𝖱𝖾𝗉𝗅𝗒 𝖳𝗈 𝖠𝗇𝗒 𝖬𝖾𝗌𝗌𝖺𝗀𝖾/𝖬𝖾𝖽𝗂𝖺 𝖶𝗂𝗍𝗁 <code>/save <𝗻𝗮𝗺𝗲></code>\n\n"
+    f"➻ <code>/get <𝗻𝗮𝗺𝗲></code> 𝖮𝗋 <code>#𝗻𝗮𝗺𝗲</code> — 𝖵𝗂𝖾𝗐 𝖠 𝖭𝗈𝗍𝖾\n\n"
+    f"➻ <code>/notes</code> — 𝖫𝗂𝗌𝗍 𝖠𝗅𝗅 𝖭𝗈𝗍𝖾𝗌\n\n"
+    f"➻ <code>/delnote <𝗻𝗮𝗺𝗲></code> — 𝖣𝖾𝗅𝖾𝗍𝖾 𝖠 𝖭𝗈𝗍𝖾\n\n"
+    f"<blockquote expandable>❖ <b>𝖲𝗎𝗉𝗉𝗈𝗋𝗍𝖾𝖽 𝖳𝗒𝗉𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖳𝖾𝗑𝗍 (𝖧𝖳𝖬𝖫), 𝖯𝗁𝗈𝗍𝗈, 𝖵𝗂𝖽𝖾𝗈,\n"
+    f"➻ 𝖣𝗈𝖼𝗎𝗆𝖾𝗇𝗍, 𝖠𝗎𝖽𝗂𝗈, 𝖲𝗍𝗂𝖼𝗄𝖾𝗋, 𝖦𝖨𝖥"
 )
 
 
