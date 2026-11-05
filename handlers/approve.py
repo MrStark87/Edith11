@@ -37,17 +37,16 @@ async def extract_target_user(client, message: Message):
 
 
 APPROVE_HELP_TEXT = (
-    "╔═══════════════╗\n"
-    " 🕊 𝗮𝗽𝗽𝗿𝗼𝘃𝗲 𝘀𝘆𝘀𝘁𝗲𝗺\n"
-    "╚═══════════════╝\n\n"
-    "𝗮𝗽𝗽𝗿𝗼𝘃𝗲𝗱 𝘂𝘀𝗲𝗿𝘀 𝗮𝗿𝗲 𝗰𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗹𝘆 𝗶𝗴𝗻𝗼𝗿𝗲𝗱\n"
-    "ʙʏ ᴇᴠᴇʀʏ ᴀᴜᴛᴏᴍᴀᴛᴇᴅ ʙᴏᴛ ʀᴇꜱᴛʀɪᴄᴛɪᴏɴ —\n"
-    "𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀:\n\n"
-    "➻ /free ᴏʀ /approve -𝗮𝗽𝗽𝗿𝗼𝘃𝗲 𝗮 𝘂𝘀𝗲𝗿 (𝗿𝗲𝗽𝗹𝘆 𝗼𝗿 @𝘂𝘀𝗲𝗿/ID)\n\n"
-    "➻ /unfree ᴏʀ /unapprove -𝗿𝗲𝗺𝗼𝘃𝗲 𝗮𝗽𝗽𝗿𝗼𝘃𝗮𝗹 𝗳𝗿𝗼𝗺 𝗮 𝘂𝘀𝗲𝗿\n\n"
-    "➻ /approved -𝗹𝗶𝘀𝘁 𝗮𝗹𝗹 𝗮𝗽𝗽𝗿𝗼𝘃𝗲𝗱 𝘂𝘀𝗲𝗿𝘀\n\n"
-    "𝗻𝗼𝘁𝗲:\n"
-    "<i>👮 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻𝘀 𝗰𝗮𝗻 𝗮𝗽𝗽𝗿𝗼𝘃𝗲/unapprove.</i>"
+    f"<blockquote>🕊 <b>𝖠𝗉𝗉𝗋𝗈𝗏𝖾 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
+    f"𝖠𝗉𝗉𝗋𝗈𝗏𝖾𝖽 𝖴𝗌𝖾𝗋𝗌 𝖠𝗋𝖾 𝖢𝗈𝗆𝗉𝗅𝖾𝗍𝖾𝗅𝗒 𝖨𝗀𝗇𝗈𝗋𝖾𝖽\n"
+    f"𝖡𝗒 𝖤𝗏𝖾𝗋𝗒 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝖾𝖽 𝖡𝗈𝗍 𝖱𝖾𝗌𝗍𝗋𝗂𝖼𝗍𝗂𝗈𝗇\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/free</code> 𝗈𝗋 <code>/approve</code> — 𝖠𝗉𝗉𝗋𝗈𝗏𝖾 𝖠 𝖴𝗌𝖾𝗋\n"
+    f"➥ 𝖱𝖾𝗉𝗅𝗒 𝖮𝗋 𝖴𝗌𝖾 <code>@username</code> / <code>ID</code>\n\n"
+    f"➻ <code>/unfree</code> 𝗈𝗋 <code>/unapprove</code> — 𝖱𝖾𝗆𝗈𝗏𝖾 𝖴𝗌𝖾𝗋 𝖠𝗉𝗉𝗋𝗈𝗏𝖺𝗅\n\n"
+    f"➻ <code>/approved</code> — 𝖫𝗂𝗌𝗍 𝖠𝗅𝗅 𝖠𝗉𝗉𝗋𝗈𝗏𝖾𝖽 𝖴𝗌𝖾𝗋𝗌\n\n"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾</b> ❖</blockquote>\n"
+    f"<i>👮 𝖮𝗇𝗅𝗒 𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝖺𝗇 𝖠𝗉𝗉𝗋𝗈𝗏𝖾 / 𝖴𝗇𝖺𝗉𝗉𝗋𝗈𝗏𝖾</i>"
 )
 
 
