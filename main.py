@@ -8,7 +8,7 @@ import logging
 
 # 🔐 Import security
 from security import verify_integrity, get_runtime_key
-from config import API_ID, API_HASH, BOT_TOKEN
+from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID
 
 logging.basicConfig(level=logging.INFO)
 
@@ -26,9 +26,9 @@ app = Client(
 # ==========================================================
 # 🔥 DEBUG COMMAND (Priority Group -1)
 # ==========================================================
-@app.on_message(filters.command("stark"), group=-1)
+@app.on_message(filters.command("stark") & filters.user(OWNER_ID), group=-1)
 async def stark_debug_cmd(client, message):
-    await message.reply_text("🦅 **Mister Stark! Bot core is active and ready.**")
+    await message.reply_text("Edith is always ready for you mister Stark. 💓")
 
 # ==========================================================
 # 🟢 DIRECT REGISTER: Naye modules ko sabse pehle register kiya
@@ -104,48 +104,6 @@ try:
     print("✨ Anti-Flood Module: LINKED!")
 except Exception as e:
     print(f"❌ Anti-Flood Link Error: {e}")
-
-try:
-    from handlers.economy import register_economy_handler
-    register_economy_handler(app)
-    print("✨ Economy Module: LINKED!")
-except Exception as e:
-    print(f"❌ Economy Link Error: {e}")
-
-try:
-    from handlers.shop import register_shop_handler
-    register_shop_handler(app)
-    print("✨ Shop Module: LINKED!")
-except Exception as e:
-    print(f"❌ Shop Link Error: {e}")
-
-try:
-    from handlers.bank import register_bank_handler
-    register_bank_handler(app)
-    print("✨ Bank Module: LINKED!")
-except Exception as e:
-    print(f"❌ Bank Link Error: {e}")
-
-try:
-    from handlers.fun import register_fun_handler
-    register_fun_handler(app)
-    print("✨ Fun Module: LINKED!")
-except Exception as e:
-    print(f"❌ Fun Link Error: {e}")
-
-try:
-    from handlers.leaderboard import register_leaderboard_handler
-    register_leaderboard_handler(app)
-    print("✨ Leaderboard Module: LINKED!")
-except Exception as e:
-    print(f"❌ Leaderboard Link Error: {e}")
-
-try:
-    from handlers.owner_eco import register_owner_eco_handler
-    register_owner_eco_handler(app)
-    print("✨ Owner-Economy Module: LINKED!")
-except Exception as e:
-    print(f"❌ Owner-Economy Link Error: {e}")
 
 try:
     from handlers.groupinfo import register_groupinfo_handler
