@@ -34,20 +34,17 @@ EMOJIS = [
 
 
 TAGALL_HELP_TEXT = (
-    "╔═══════════════╗\n"
-    "  🔖 𝘁𝗮𝗴 𝗮𝗹𝗹\n"
-    "╚═══════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /tagall — 𝘁𝗮𝗴 𝗮𝗹𝗹 𝗺𝗲𝗺𝗯𝗲𝗿𝘀\n"
-    "➻ /tagall {𝗺𝗲𝘀𝘀𝗮𝗴𝗲} — 𝘁𝗮𝗴 𝘄𝗶𝘁𝗵 𝗰𝘂𝘀𝘁𝗼𝗺 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-    "➻ /stoptag — 𝘀𝘁𝗼𝗽 𝘁𝗮𝗴𝗴𝗶𝗻𝗴\n\n"
-    "❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-    "➻ 𝗮𝗱𝗺𝗶𝗻 𝗼𝗻𝗹𝘆\n"
-    "➻ 1 𝗲𝗺𝗼𝗷𝗶 = 1 𝗽𝗲𝗿𝘀𝗼𝗻 𝗺𝗲𝗻𝘁𝗶𝗼𝗻\n"
-    "➻ 5 𝗽𝗲𝗼𝗽𝗹𝗲 𝗽𝗲𝗿 𝗺𝗲𝘀𝘀𝗮𝗴𝗲\n"
-    "➻ 𝗯𝗼𝘁𝘀 & 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝗰𝗰𝗼𝘂𝗻𝘁𝘀 𝘀𝗸𝗶𝗽𝗽𝗲𝗱"
+    f"<blockquote>🔖 <b>𝖳𝖺𝗀 𝖠𝗅𝗅</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/tagall</code> — 𝖳𝖺𝗀 𝖠𝗅𝗅 𝖬𝖾𝗆𝖻𝖾𝗋𝗌\n"
+    f"➻ <code>/tagall <𝗺𝗲𝘀𝘀𝗮𝗴𝗲></code> — 𝖳𝖺𝗀 𝖶𝗂𝗍𝗁 𝖢𝗎𝗌𝗍𝗈𝗆 𝖬𝖾𝗌𝗌𝖺𝗀𝖾\n"
+    f"➻ <code>/stoptag</code> — 𝖲𝗍𝗈𝗉 𝖳𝖺𝗀𝗀𝗂𝗇𝗀\n\n"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖠𝖽𝗆𝗂𝗇 𝖮𝗇𝗅𝗒\n"
+    f"➻ 1 𝖤𝗆𝗈𝗃𝗂 = 1 𝖯𝖾𝗋𝗌𝗈𝗇 𝖬𝖾𝗇𝗍𝗂𝗈𝗇\n"
+    f"➻ 5 𝖯𝖾𝗈𝗉𝗅𝖾 𝖯𝖾𝗋 𝖬𝖾𝗌𝗌𝖺𝗀𝖾\n"
+    f"➻ 𝖡𝗈𝗍𝗌 & 𝖣𝖾𝗅𝖾𝗍𝖾𝖽 𝖠𝖼𝖼𝗈𝗎𝗇𝗍𝗌 𝖲𝗄𝗂𝗉𝗉𝖾𝖽"
 )
-
 
 async def is_power(client, chat_id: int, user_id: int) -> bool:
     member = await client.get_chat_member(chat_id, user_id)
