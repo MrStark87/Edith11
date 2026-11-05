@@ -10,16 +10,14 @@ import db
 
 
 RULES_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "   📜 𝗴𝗿𝗼𝘂𝗽 𝗿𝘂𝗹𝗲𝘀\n"
-    "╚══════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /setrules &lt;𝘁𝗲𝘅𝘁&gt; — 𝘀𝗲𝘁 𝗴𝗿𝗼𝘂𝗽 𝗿𝘂𝗹𝗲𝘀\n"
-    "➻ /rules — 𝘃𝗶𝗲𝘄 𝗿𝘂𝗹𝗲𝘀 (𝗮𝗻𝘆𝗼𝗻𝗲)\n"
-    "➻ /clearrules — 𝗱𝗲𝗹𝗲𝘁𝗲 𝗿𝘂𝗹𝗲𝘀\n\n"
-    "❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-    "➻ 𝗵𝘁𝗺𝗹 𝗳𝗼𝗿𝗺𝗮𝘁𝘁𝗶𝗻𝗴 𝘀𝘂𝗽𝗽𝗼𝗿𝘁𝗲𝗱\n"
-    "➻ /setrules 𝗮𝗱𝗺𝗶𝗻 𝗼𝗻𝗹𝘆"
+    f"<blockquote>📜 <b>𝖦𝗋𝗈𝗎𝗉 𝖱𝗎𝗅𝖾𝗌</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/setrules <𝘁𝗲𝘅𝘁></code> — 𝖲𝖾𝗍 𝖦𝗋𝗈𝗎𝗉 𝖱𝗎𝗅𝖾𝗌\n"
+    f"➻ <code>/rules</code> — 𝖵𝗂𝖾𝗐 𝖱𝗎𝗅𝖾𝗌 (𝖠𝗇𝗒𝗈𝗇𝖾)\n"
+    f"➻ <code>/clearrules</code> — 𝖣𝖾𝗅𝖾𝗍𝖾 𝖱𝗎𝗅𝖾𝗌\n\n"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ 𝖧𝖳𝖬𝖫 𝖥𝗈𝗋𝗆𝖺𝗍𝗍𝗂𝗇𝗀 𝖲𝗎𝗉𝗉𝗈𝗋𝗍𝖾𝖽\n"
+    f"➻ <code>/setrules</code> 𝖠𝖽𝗆𝗂𝗇 𝖮𝗇𝗅𝗒"
 )
 
 
