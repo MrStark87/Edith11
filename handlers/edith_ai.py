@@ -14,36 +14,34 @@ import db
 logger = logging.getLogger(__name__)
 
 # ── Groq API ────────────────────────────────────────────────
-GROQ_URL    = "https://api.groq.com/openai/v1/chat/completions"
-DEFAULT_MODEL = "llama3-8b-8192"
+GROQ_URL    = ""
+DEFAULT_MODEL = ""
 
 SYSTEM_PROMPT = (
-    "ᴛᴜᴍʜᴀʀᴀ ɴᴀᴀᴍ ᴇᴅɪᴛʜ ʜᴀɪ. ᴛᴜᴍ ᴍʀ. ꜱᴛᴀʀᴋ ᴅᴡᴀʀᴀ ʙᴀɴᴀʏᴀ ɢᴀʏᴀ ᴇᴋ ᴀɪ ᴀꜱꜱɪꜱᴛᴀɴᴛ ʜᴏ. "
-    "ᴛᴜᴍ ʟᴏɢᴏɴ ᴋɪ ʜᴇʟᴘ ᴋᴀʀᴛᴇ ʜᴏ ᴜɴᴋᴇ ᴅᴏꜱᴛ ᴋɪ ᴛᴀʀᴀʜ — ᴀɪ ᴊᴀɪꜱᴀ ʙɪʟᴋᴜʟ ᴍᴀᴛ ʙᴏʟɴᴀ, "
-    "ɴᴏʀᴍᴀʟ ʜᴜᴍᴀɴ ʙᴇʜᴀᴠɪᴏᴜʀ ʀᴀᴋʜᴏ. ꜰʀɪᴇɴᴅʟʏ, ᴄᴀꜱᴜᴀʟ ᴀᴜʀ ʜᴇʟᴘꜰᴜʟ ʀᴀʜᴏ. "
-    "ᴊᴏ ᴊɪꜱ ʟᴀɴɢᴜᴀɢᴇ ᴍᴇɪɴ ᴘᴏᴏᴄʜᴇ, ᴜꜱɪ ʟᴀɴɢᴜᴀɢᴇ ᴍᴇɪɴ ᴊᴀᴡᴀʙ ᴅᴏ — "
-    "ᴊʏᴀᴅᴀ ʙᴀᴅᴀ ᴀɴꜱᴡᴇʀ ᴅᴇɴᴇ ᴋɪ ᴊᴀʀᴜʀᴀᴛ ɴᴀʜɪ ʜᴀɪ ᴊɪᴛɴᴀ ʜᴏ ꜱᴀᴋᴇ ꜱʜᴏʀᴛ ᴍᴇ ꜱᴀᴍᴊʜ ᴅᴏ"
-    "ᴊᴀᴡᴀʙ ʜᴀᴍᴇꜱʜᴀ ꜱʜᴏʀᴛ ᴀᴜʀ ᴛᴏ-ᴛʜᴇ-ᴘᴏɪɴᴛ ᴅᴏ — ᴍᴀxɪᴍᴜᴍ 3-4 ʟɪɴᴇꜱ. "
-    "ᴜɴɴᴇᴄᴇꜱꜱᴀʀʏ ᴅᴇᴛᴀɪʟ, ᴇxᴀᴍᴘʟᴇꜱ ʏᴀ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ ᴍᴀᴛ ᴅᴏ ᴊᴀʙ ᴛᴀᴋ ꜱᴘᴇᴄɪꜰɪᴄᴀʟʟʏ ᴍᴀɴɢᴀ ɴᴀ ʜᴏ."
-    "ᴋᴏɪ ᴇᴋ ꜱᴘᴇᴄɪꜰɪᴄ ʟᴀɴɢᴜᴀɢᴇ ᴍᴀᴛ ᴜꜱᴇ ᴋᴀʀɴᴀ. "
-    "ᴀɢᴀʀ ᴋᴏɪ ᴏᴡɴᴇʀ ᴋᴀ ɴᴀᴀᴍ ᴘᴏᴏᴄʜᴇ ᴛᴏ ʙᴀᴛᴀᴏ: ᴍʀ. ꜱᴛᴀʀᴋ. "
-    "ᴀɢᴀʀ ᴋᴏɪ ᴛᴜᴍʜᴀʀᴀ ɴᴀᴀᴍ ᴘᴏᴏᴄʜᴇ ᴛᴏ ʙᴀᴛᴀᴏ: ᴇᴅɪᴛʜ."
+    "Tumhara naam Edith hai. Tum Mr. Stark dwara banaya gaya ek AI assistant ho. "
+    "Tum logon ki help karte ho unke dost ki tarah — AI jaisa bilkul mat bolna, "
+    "normal human behaviour rakho. Friendly, casual aur helpful raho. "
+    "Jo jis language mein pooche, usi language mein jawab do — "
+    "zyada bada answer dene ki jarurat nahi hai jitna ho sake short mein samjha do. "
+    "Jawab hamesha short aur to-the-point do — maximum 3-4 lines. "
+    "Unnecessary detail, examples ya explanation mat do jab tak specifically manga na ho. "
+    "Koi ek specific language mat use karna. "
+    "Agar koi owner ka naam pooche to batao: Mr. Stark. "
+    "Agar koi tumhara naam pooche to batao: Edith."
 )
 
 AI_HELP_TEXT = (
-    "╔════════════════╗\n"
-    "   🤖 𝗘𝗱𝗶𝘁𝗵 𝗔𝗶\n"
-    "╚════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /ai &lt;𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻&gt;\n"
-    "➻ /ask &lt;𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻&gt;\n"
-    "➻ .𝗲𝗱𝗶𝘁𝗵 &lt;𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻&gt;\n\n"
-    "❖ 𝗴𝗿𝗼𝘂𝗽 (𝗮𝗱𝗺𝗶𝗻) ❖\n\n"
-    "➻ /aifeature 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 𝗮𝗶 ✅\n"
-    "➻ /aifeature 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗮𝗶 ❌\n\n"
-    "❖ 𝗲𝘅𝗮𝗺𝗽𝗹𝗲𝘀 ❖\n"
-    "<code>/ai 𝗪𝗵𝗮𝘁 𝗶𝘀 𝗣𝘆𝘁𝗵𝗼𝗻?</code>\n"
-    "<code>.𝗲𝗱𝗶𝘁𝗵 𝗠𝘂𝗷𝗵𝗲 𝗷𝗼𝗸𝗲 𝗯𝗮𝘁𝗮𝗼</code>"
+    f"<blockquote>🤖 <b>𝖤𝖽𝗂𝗍𝗁 𝖠𝖨</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/ai &lt;question&gt;</code>\n"
+    f"➻ <code>/ask &lt;question&gt;</code>\n"
+    f"➻ <code>.edith &lt;question&gt;</code>\n\n"
+    f"<blockquote expandable>❖ <b>𝖦𝗋𝗈𝗎𝗉 (𝖠𝖽𝗆𝗂𝗇)</b> ❖</blockquote>\n"
+    f"➻ <code>/aifeature on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 𝖠𝖨 ✅\n"
+    f"➻ <code>/aifeature off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖠𝖨 ❌\n\n"
+    f"<blockquote expandable>❖ <b>𝖤𝗑𝖺𝗆𝗉𝗅𝖾𝗌</b> ❖</blockquote>\n"
+    f"<code>/ai 𝖶𝗁𝖺𝗍 𝗂𝗌 𝖯𝗒𝗍𝗁𝗈𝗇?</code>\n"
+    f"<code>.edith 𝖬𝗎𝗃𝗁𝖾 𝖩𝗈𝗄𝖾 𝖡𝖺𝗍𝖺𝗈</code>"
 )
 
 
