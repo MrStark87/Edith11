@@ -17,27 +17,24 @@ async def is_power(client, chat_id: int, user_id: int) -> bool:
     return member.status in [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]
 
 
-GHOST_HELP_TEXT = (
-    f"╔══════════════════╗\n"
-    f"👻 𝗴𝗵𝗼𝘀𝘁 𝗺𝗼𝗱𝗲\n"
-    f"╚══════════════════╝\n\n"
-    
-    f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    f"➻ /ghostmode 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 𝗴𝗵𝗼𝘀𝘁 𝗺𝗼𝗱𝗲 ✅\n"
-    f"➻ /ghostmode 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗴𝗵𝗼𝘀𝘁 𝗺𝗼𝗱𝗲 ❌\n\n"
-    
-    f"❖ 𝘄𝗵𝗮𝘁 𝗴𝗲𝘁𝘀 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 ❖\n"
-    f"➻ 𝘂𝘀𝗲𝗿 𝗷𝗼𝗶𝗻𝗲𝗱 𝘁𝗵𝗲 𝗴𝗿𝗼𝘂𝗽\n"
-    f"➻ 𝘂𝘀𝗲𝗿 𝗹𝗲𝗳𝘁 𝘁𝗵𝗲 𝗴𝗿𝗼𝘂𝗽\n"
-    f"➻ 𝘂𝘀𝗲𝗿 𝘄𝗮𝘀 𝗿𝗲𝗺𝗼𝘃𝗲𝗱\n"
-    f"➻ 𝗴𝗿𝗼𝘂𝗽 𝘁𝗶𝘁𝗹𝗲 𝗰𝗵𝗮𝗻𝗴𝗲𝗱\n"
-    f"➻ 𝗴𝗿𝗼𝘂𝗽 𝗽𝗵𝗼𝘁𝗼 𝗰𝗵𝗮𝗻𝗴𝗲𝗱\n"
-    f"➻ 𝗽𝗶𝗻𝗻𝗲𝗱 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝗻𝗼𝘁𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻𝘀\n"
-    f"➻ 𝘃𝗶𝗱𝗲𝗼 𝗰𝗵𝗮𝘁 𝘀𝘁𝗮𝗿𝘁𝗲𝗱 / 𝗲𝗻𝗱𝗲𝗱\n\n"
-    
-    f"👮 𝗢𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻𝘀 𝗰𝗮𝗻 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲 𝘁𝗵𝗶𝘀."
-)
 
+GHOST_HELP_TEXT = (
+    f"<blockquote>👻 <b>𝖦𝗁𝗈𝗌𝗍 𝖬𝗈𝖽𝖾</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/ghostmode on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 𝖦𝗁𝗈𝗌𝗍 𝖬𝗈𝖽𝖾 ✅\n"
+    f"➻ <code>/ghostmode off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖦𝗁𝗈𝗌𝗍 𝖬𝗈𝖽𝖾 ❌\n\n"
+
+    f"<blockquote expandable>❖ <b>𝖶𝗁𝖺𝗍 𝖦𝖾𝗍𝗌 𝖣𝖾𝗅𝖾𝗍𝖾𝖽</b> ❖</blockquote>\n"
+    f"➻ 𝖴𝗌𝖾𝗋 𝖩𝗈𝗂𝗇𝖾𝖽 𝖳𝗁𝖾 𝖦𝗋𝗈𝗎𝗉\n"
+    f"➻ 𝖴𝗌𝖾𝗋 𝖫𝖾𝖿𝗍 𝖳𝗁𝖾 𝖦𝗋𝗈𝗎𝗉\n"
+    f"➻ 𝖴𝗌𝖾𝗋 𝖶𝖺𝗌 𝖱𝖾𝗆𝗈𝗏𝖾𝖽\n"
+    f"➻ 𝖦𝗋𝗈𝗎𝗉 𝖳𝗂𝗍𝗅𝖾 𝖢𝗁𝖺𝗇𝗀𝖾𝖽\n"
+    f"➻ 𝖦𝗋𝗈𝗎𝗉 𝖯𝗁𝗈𝗍𝗈 𝖢𝗁𝖺𝗇𝗀𝖾𝖽\n"
+    f"➻ 𝖯𝗂𝗇𝗇𝖾𝖽 𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖭𝗈𝗍𝗂𝖿𝗂𝖼𝖺𝗍𝗂𝗈𝗇𝗌\n"
+    f"➻ 𝖵𝗂𝖽𝖾𝗈 𝖢𝗁𝖺𝗍 𝖲𝗍𝖺𝗋𝗍𝖾𝖽 / 𝖤𝗇𝖽𝖾𝖽\n\n"
+
+    f"👮 <b>𝖮𝗇𝗅𝗒 𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝖺𝗇 𝖢𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖾 𝖳𝗁𝗂𝗌.</b>"
+    )
 
 def register_ghost_handler(app: Client):
 
