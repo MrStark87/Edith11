@@ -13,22 +13,19 @@ import asyncio
 logger = logging.getLogger(__name__)
 
 ANTI_STICKER_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "   🎭 𝗮𝗻𝘁𝗶 𝘀𝘁𝗶𝗰𝗸𝗲𝗿\n"
-    "╚══════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /banpack — 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 𝘁𝗼 𝗯𝗮𝗻 𝗶𝘁𝘀 𝗽𝗮𝗰𝗸\n"
-    "➻ /unbanpack &lt;𝗽𝗮𝗰𝗸𝗻𝗮𝗺𝗲&gt; — 𝘂𝗻𝗯𝗮𝗻 𝗮 𝗽𝗮𝗰𝗸\n"
-    "➻ /bannedpacks — 𝗹𝗶𝘀𝘁 𝗮𝗹𝗹 𝗯𝗮𝗻𝗻𝗲𝗱 𝗽𝗮𝗰𝗸𝘀\n"
-    "➻ /clearbanpacks — 𝗰𝗹𝗲𝗮𝗿 𝗮𝗹𝗹 𝗯𝗮𝗻𝗻𝗲𝗱 𝗽𝗮𝗰𝗸𝘀\n"
-    "➻ /antisticker 𝗼𝗻 — 𝗯𝗹𝗼𝗰𝗸 𝗮𝗹𝗹 𝘀𝘁𝗶𝗰𝗸𝗲𝗿𝘀\n"
-    "➻ /antisticker 𝗼𝗳𝗳 — 𝗮𝗹𝗹𝗼𝘄 𝗮𝗹𝗹 𝘀𝘁𝗶𝗰𝗸𝗲𝗿𝘀\n\n"
-    "❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-    "➻ /banpack 𝗯𝗮𝗻𝘀 𝘁𝗵𝗲 𝗲𝗻𝘁𝗶𝗿𝗲 𝗽𝗮𝗰𝗸\n"
-    "➻ /antisticker 𝗯𝗹𝗼𝗰𝗸𝘀 𝗲𝘃𝗲𝗿𝘆 𝘀𝘁𝗶𝗰𝗸𝗲𝗿\n"
-    "➻ 𝗮𝗱𝗺𝗶𝗻𝘀 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗮𝗳𝗳𝗲𝗰𝘁𝗲𝗱"
+    f"<blockquote>🎭 <b>𝖠𝗇𝗍𝗂 𝖲𝗍𝗂𝖼𝗄𝖾𝗋</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/banpack</code> — 𝖱𝖾𝗉𝗅𝗒 𝖳𝗈 𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝖳𝗈 𝖡𝖺𝗇 𝖨𝗍𝗌 𝖯𝖺𝖼𝗄\n"
+    f"➻ <code>/unbanpack &lt;packname&gt;</code> — 𝖴𝗇𝖻𝖺𝗇 𝖠 𝖯𝖺𝖼𝗄\n"
+    f"➻ <code>/bannedpacks</code> — 𝖫𝗂𝗌𝗍 𝖠𝗅𝗅 𝖡𝖺𝗇𝗇𝖾𝖽 𝖯𝖺𝖼𝗄𝗌\n"
+    f"➻ <code>/clearbanpacks</code> — 𝖢𝗅𝖾𝖺𝗋 𝖠𝗅𝗅 𝖡𝖺𝗇𝗇𝖾𝖽 𝖯𝖺𝖼𝗄𝗌\n"
+    f"➻ <code>/antisticker on</code> — 𝖡𝗅𝗈𝖼𝗄 𝖠𝗅𝗅 𝖲𝗍𝗂𝖼𝗄𝖾𝗋𝗌\n"
+    f"➻ <code>/antisticker off</code> — 𝖠𝗅𝗅𝗈𝗐 𝖠𝗅𝗅 𝖲𝗍𝗂𝖼𝗄𝖾𝗋𝗌\n\n"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/banpack</code> 𝖡𝖺𝗇𝗌 𝖳𝗁𝖾 𝖤𝗇𝗍𝗂𝗋𝖾 𝖯𝖺𝖼𝗄\n"
+    f"➻ <code>/antisticker</code> 𝖡𝗅𝗈𝖼𝗄𝗌 𝖤𝗏𝖾𝗋𝗒 𝖲𝗍𝗂𝖼𝗄𝖾𝗋\n"
+    f"➻ 𝖠𝖽𝗆𝗂𝗇𝗌 𝖠𝗋𝖾 𝖭𝗈𝗍 𝖠𝖿𝖿𝖾𝖼𝗍𝖾𝖽"
 )
-
 
 async def is_power(client, chat_id: int, user_id: int) -> bool:
     try:
