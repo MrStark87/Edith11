@@ -16,27 +16,19 @@ async def is_power(client, chat_id: int, user_id: int) -> bool:
     member = await client.get_chat_member(chat_id, user_id)
     return member.status in [ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]
 
-
 FILTERS_HELP_TEXT = (
-    f"╔══════════════════╗\n"
-    f"   📝 𝗳𝗶𝗹𝘁𝗲𝗿𝘀\n"
-    f"╚══════════════════╝\n\n"
-    
-    f"❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    
-    f"➻ /filter &lt;𝗸𝗲𝘆𝘄𝗼𝗿𝗱&gt;\n"
-    f"➻ 𝗿𝗲𝗽𝗹𝘆 𝘁𝗼 𝗮 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 / 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 𝘁𝗼 𝘀𝗲𝘁\n"
-    f"➻ 𝗮𝘂𝘁𝗼-𝗿𝗲𝗽𝗹𝘆 𝗳𝗼𝗿 𝘁𝗵𝗮𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱\n\n"
-    
-    f"➻ /stopfilter &lt;𝗸𝗲𝘆𝘄𝗼𝗿𝗱&gt;\n"
-    f"➻ 𝗿𝗲𝗺𝗼𝘃𝗲 𝗮 𝗳𝗶𝗹𝘁𝗲𝗿\n\n"
-    
-    f"➻ /filters\n"
-    f"➻ 𝗹𝗶𝘀𝘁 𝗮𝗹𝗹 𝗮𝗰𝘁𝗶𝘃𝗲 𝗳𝗶𝗹𝘁𝗲𝗿𝘀\n\n"
-    
-    f"➻ 🌟 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗲 𝗿𝗲𝗽𝗹𝗶𝗲𝘀 𝗮𝗻𝗱 𝗺𝗮𝗸𝗲 𝘆𝗼𝘂𝗿\n"
-    f"➻ 𝗴𝗿𝗼𝘂𝗽 𝗺𝗼𝗿𝗲 𝗶𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗲"
-)
+    f"<blockquote>📝 <b>𝖥𝗂𝗅𝗍𝖾𝗋𝗌</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/filter <keyword></code>\n"
+    f"➥ 𝖱𝖾𝗉𝗅𝗒 𝖳𝗈 𝖠 𝖬𝖾𝗌𝗌𝖺𝗀𝖾 / 𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝖳𝗈 𝖲𝖾𝗍\n"
+    f"➥ 𝖠𝗎𝗍𝗈-𝖱𝖾𝗉𝗅𝗒 𝖥𝗈𝗋 𝖳𝗁𝖺𝗍 𝖪𝖾𝗒𝗐𝗈𝗋𝖽\n\n"
+    f"➻ <code>/stopfilte <keyword></code>\n"
+    f"➥ 𝖱𝖾𝗆𝗈𝗏𝖾 𝖠 𝖥𝗂𝗅𝗍𝖾𝗋\n\n"
+    f"➻ <code>/filters</code>\n"
+    f"➥ 𝖫𝗂𝗌𝗍 𝖠𝗅𝗅 𝖠𝖼𝗍𝗂𝗏𝖾 𝖥𝗂𝗅𝗍𝖾𝗋𝗌\n\n"
+    f"➻ 🌟 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝖾 𝖱𝖾𝗉𝗅𝗂𝖾𝗌 𝖠𝗇𝖽 𝖬𝖺𝗄𝖾 𝖸𝗈𝗎𝗋\n"
+    f"➥ 𝖦𝗋𝗈𝗎𝗉 𝖬𝗈𝗋𝖾 𝖨𝗇𝗍𝖾𝗋𝖺𝖼𝗍𝗂𝗏𝖾"
+    )
 
 def register_filters_handler(app: Client):
 
