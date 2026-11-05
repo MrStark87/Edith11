@@ -49,20 +49,18 @@ async def _delete_after(msg, delay: int):
 
 
 DISABLE_HELP_TEXT = (
-    "╔════════════════╗\n"
-    " 🚫 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n"
-    "╚════════════════╝\n\n"
-    "❖𝗯𝗹𝗼𝗰𝗸 𝗿𝗲𝗴𝘂𝗹𝗮𝗿 𝗺𝗲𝗺𝗯𝗲𝗿𝘀 𝗳𝗿𝗼𝗺 𝘂𝘀𝗶𝗻𝗴\n"
-    "ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴇᴍʙᴇʀ-ᴜꜱᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ.\n"
-    "ᴀᴅᴍɪɴꜱ ᴀʀᴇ ɴᴇᴠᴇʀ ᴀꜰꜰᴇᴄᴛᴇᴅ.\n\n"
-    "❖𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀:\n\n"
-    "➻ /disable &lt;ᴄᴏᴍᴍᴀɴᴅ&gt; -𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝗮 𝗰𝗼𝗺𝗺𝗮𝗻𝗱 𝗳𝗼𝗿 𝗺𝗲𝗺𝗯𝗲𝗿𝘀\n"
-    "➻ /enable &lt;ᴄᴏᴍᴍᴀɴᴅ&gt; -𝗿𝗲-𝗲𝗻𝗮𝗯𝗹𝗲 𝗮 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n"
-    "➻ /disabled -𝗹𝗶𝘀𝘁 𝗱𝗶𝘀𝗮𝗯𝗹𝗲𝗱 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀\n\n"
-    "❖ 𝗱𝗶𝘀𝗮𝗯𝗹𝗲𝗮𝗯𝗹𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n"
+    f"<blockquote>🚫 <b>𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b></blockquote>\n\n"
+    f"❖ 𝖡𝗅𝗈𝖼𝗄 𝖱𝖾𝗀𝗎𝗅𝖺𝗋 𝖬𝖾𝗆𝖻𝖾𝗋𝗌 𝖥𝗋𝗈𝗆 𝖴𝗌𝗂𝗇𝗀\n"
+    f"𝖲𝗉𝖾𝖼𝗂𝖿𝗂𝖼 𝖬𝖾𝗆𝖻𝖾𝗋-𝖴𝗌𝖺𝖻𝗅𝖾 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌.\n"
+    f"𝖠𝖽𝗆𝗂𝗇𝗌 𝖠𝗋𝖾 𝖭𝖾𝗏𝖾𝗋 𝖠𝖿𝖿𝖾𝖼𝗍𝖾𝖽.\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/disable &lt;command&gt;</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖠 𝖢𝗈𝗆𝗆𝖺𝗇𝖽 𝖥𝗈𝗋 𝖬𝖾𝗆𝖻𝖾𝗋𝗌\n"
+    f"➻ <code>/enable &lt;command&gt;</code> — 𝖱𝖾-𝖤𝗇𝖺𝖻𝗅𝖾 𝖠 𝖢𝗈𝗆𝗆𝖺𝗇𝖽\n"
+    f"➻ <code>/disabled</code> — 𝖫𝗂𝗌𝗍 𝖣𝗂𝗌𝖺𝖻𝗅𝖾𝖽 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌\n\n"
+    f"<blockquote expandable>❖ <b>𝖣𝗂𝗌𝖺𝖻𝗅𝖾𝖺𝖻𝗅𝖾 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
     + ", ".join(f"<code>{c}</code>" for c in DISABLEABLE_COMMANDS) +
     "\n\n"
-    "<i>👮 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻𝘀 𝗰𝗮𝗻 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲 𝘁𝗵𝗶𝘀.</i>"
+    f"<i>👮 𝖮𝗇𝗅𝗒 𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝖺𝗇 𝖢𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖾 𝖳𝗁𝗂𝗌.</i>"
 )
 
 def register_disable_handler(app: Client):
