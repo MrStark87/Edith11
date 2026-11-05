@@ -21,32 +21,29 @@ logger = logging.getLogger(__name__)
 # Help text — updated for new system
 # ============================================================
 WELCOME_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "  👋 𝘄𝗲𝗹𝗰𝗼𝗺𝗲 𝘀𝘆𝘀𝘁𝗲𝗺\n"
-    "╚══════════════════╝\n\n"
+    f"<blockquote>👋 <b>𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝖲𝗒𝗌𝗍𝖾𝗆</b></blockquote>\n\n"
 
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /welcome 𝗼𝗻 — 𝗲𝗻𝗮𝗯𝗹𝗲 𝘄𝗲𝗹𝗰𝗼𝗺𝗲 ✅\n"
-    "➻ /welcome 𝗼𝗳𝗳 — 𝗱𝗶𝘀𝗮𝗯𝗹𝗲 𝘄𝗲𝗹𝗰𝗼𝗺𝗲 ❌\n"
-    "➻ /setwelcome — 𝘀𝗲𝘁𝘂𝗽 𝘃𝗶𝗮 𝗽𝗺 (𝘁𝗲𝘅𝘁+𝗺𝗲𝗱𝗶𝗮+𝗯𝘂𝘁𝘁𝗼𝗻𝘀)\n"
-    "➻ /resetwelcome — 𝗿𝗲𝘀𝗲𝘁 𝘁𝗼 𝗱𝗲𝗳𝗮𝘂𝗹𝘁\n"
-    "➻ /previewwelcome — 𝗽𝗿𝗲𝘃𝗶𝗲𝘄 𝗰𝘂𝗿𝗿𝗲𝗻𝘁 𝘄𝗲𝗹𝗰𝗼𝗺𝗲\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/welcome on</code> — 𝖤𝗇𝖺𝖻𝗅𝖾 𝖶𝖾𝗅𝖼𝗈𝗆𝖾 ✅\n"
+    f"➻ <code>/welcome off</code> — 𝖣𝗂𝗌𝖺𝖻𝗅𝖾 𝖶𝖾𝗅𝖼𝗈𝗆𝖾 ❌\n"
+    f"➻ <code>/setwelcome</code> — 𝖲𝖾𝗍𝗎𝗉 𝖵𝗂𝖺 𝖯𝖬 (𝖳𝖾𝗑𝗍+𝖬𝖾𝖽𝗂𝖺+𝖡𝗎𝗍𝗍𝗈𝗇𝗌)\n"
+    f"➻ <code>/resetwelcome</code> — 𝖱𝖾𝗌𝖾𝗍 𝖳𝗈 𝖣𝖾𝖿𝖺𝗎𝗅𝗍\n"
+    f"➻ <code>/previewwelcome</code> — 𝖯𝗋𝖾𝗏𝗂𝖾𝗐 𝖢𝗎𝗋𝗋𝖾𝗇𝗍 𝖶𝖾𝗅𝖼𝗈𝗆𝖾\n\n"
 
-    "❖ 𝗽𝗹𝗮𝗰𝗲𝗵𝗼𝗹𝗱𝗲𝗿𝘀 ❖\n"
-    "<code>{id}</code> — 𝘂𝘀𝗲𝗿 𝗶𝗱\n"
-    "<code>{name}</code> — 𝗳𝗶𝗿𝘀𝘁 𝗻𝗮𝗺𝗲\n"
-    "<code>{surname}</code> — 𝗹𝗮𝘀𝘁 𝗻𝗮𝗺𝗲\n"
-    "<code>{namesurname}</code> — 𝗳𝘂𝗹𝗹 𝗻𝗮𝗺𝗲\n"
-    "<code>{mention}</code> — 𝗰𝗹𝗶𝗰𝗸𝗮𝗯𝗹𝗲 𝗺𝗲𝗻𝘁𝗶𝗼𝗻\n"
-    "<code>{username}</code> — @𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲\n"
-    "<code>{groupname}</code> — 𝗴𝗿𝗼𝘂𝗽 𝗻𝗮𝗺𝗲\n\n"
+    f"<blockquote expandable>❖ <b>𝖯𝗅𝖺𝖼𝖾𝗁𝗈𝗅𝖽𝖾𝗋𝗌</b> ❖</blockquote>\n"
+    f"<code>{{id}}</code> — 𝖴𝗌𝖾𝗋 𝖨𝖣\n"
+    f"<code>{{name}}</code> — 𝖥𝗂𝗋𝗌𝗍 𝖭𝖺𝗆𝖾\n"
+    f"<code>{{surname}}</code> — 𝖫𝖺𝗌𝗍 𝖭𝖺𝗆𝖾\n"
+    f"<code>{{namesurname}}</code> — 𝖥𝗎𝗅𝗅 𝖭𝖺𝗆𝖾\n"
+    f"<code>{{mention}}</code> — 𝖢𝗅𝗂𝖼𝗄𝖺𝖻𝗅𝖾 𝖬𝖾𝗇𝗍𝗂𝗈𝗇\n"
+    f"<code>{{username}}</code> — @𝖴𝗌𝖾𝗋𝗇𝖺𝗆𝖾\n"
+    f"<code>{{groupname}}</code> — 𝖦𝗋𝗈𝗎𝗉 𝖭𝖺𝗆𝖾\n\n"
 
-    "❖ 𝗻𝗼𝘁𝗲𝘀 ❖\n"
-    "➻ /setwelcome 𝗼𝗽𝗲𝗻𝘀 𝗮 𝗽𝗺 𝘀𝗲𝘁𝘂𝗽 𝗽𝗮𝗻𝗲𝗹\n"
-    "➻ 𝗵𝘁𝗺𝗹 𝗳𝗼𝗿𝗺𝗮𝘁𝘁𝗶𝗻𝗴 𝘀𝘂𝗽𝗽𝗼𝗿𝘁𝗲𝗱\n"
-    "➻ 𝗰𝗮𝗻 𝘀𝗲𝘁 𝘁𝗲𝘅𝘁 + 𝗺𝗲𝗱𝗶𝗮 + 𝘂𝗿𝗹 𝗯𝘂𝘁𝘁𝗼𝗻𝘀"
+    f"<blockquote expandable>❖ <b>𝖭𝗈𝗍𝖾𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/setwelcome</code> 𝖮𝗉𝖾𝗇𝗌 𝖠 𝖯𝖬 𝖲𝖾𝗍𝗎𝗉 𝖯𝖺𝗇𝖾𝗅\n"
+    f"➻ 𝖧𝖳𝖬𝖫 𝖥𝗈𝗋𝗆𝖺𝗍𝗍𝗂𝗇𝗀 𝖲𝗎𝗉𝗉𝗈𝗋𝗍𝖾𝖽\n"
+    f"➻ 𝖢𝖺𝗇 𝖲𝖾𝗍 𝖳𝖾𝗑𝗍 + 𝖬𝖾𝖽𝗂𝖺 + 𝖴𝖱𝖫 𝖡𝗎𝗍𝗍𝗈𝗇𝗌"
 )
-
 # ============================================================
 # Placeholder vars display string
 # ============================================================
