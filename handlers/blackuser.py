@@ -38,24 +38,17 @@ async def extract_user_id(client, message: Message):
     return None, None
 
 BLACKUSER_HELP_TEXT = (
-    f"╔══════════════════╗\n"
-    f" 🚷 𝗕𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁𝗲𝗱 𝗨𝘀𝗲𝗿𝘀\n"
-    f"╚══════════════════╝\n\n"
-    
-    f"𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁𝗲𝗱 𝘂𝘀𝗲𝗿𝘀 𝗵𝗮𝘃𝗲 𝗮𝗹𝗹 𝘁𝗵𝗲𝗶𝗿 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀\n"
-    f"𝗱𝗲𝗹𝗲𝘁𝗲𝗱 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗰𝗮𝗹𝗹𝘆 — 𝘁𝗲𝘅𝘁, 𝗺𝗲𝗱𝗶𝗮,\n"
-    f"𝘀𝘁𝗶𝗰𝗸𝗲𝗿𝘀, 𝗴𝗶𝗳'𝘀, 𝗲𝘃𝗲𝗿𝘆𝘁𝗵𝗶𝗻𝗴.\n\n"
-    
-    f"❖ 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    
-    f"➻ /blackuser <userid> ➻ 𝗮𝗱𝗱 𝘂𝘀𝗲𝗿 𝘁𝗼 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁\n"
-    f"➻ /rmblackuser <userid> ➻ 𝗿𝗲𝗺𝗼𝘃𝗲 𝗳𝗿𝗼𝗺 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁\n"
-    f"➻ /blacklistusers ➻ 𝘀𝗲𝗲 𝗮𝗹𝗹 𝗯𝗹𝗮𝗰𝗸𝗹𝗶𝘀𝘁𝗲𝗱 𝘂𝘀𝗲𝗿𝘀\n\n"
-    
-    f"<i>👮 𝗼𝗻𝗹𝘆 𝗮𝗱𝗺𝗶𝗻𝘀 𝗰𝗮𝗻 𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲 𝘁𝗵𝗶𝘀</i>\n"
-    f"<i>𝗮𝗱𝗺𝗶𝗻𝘀 𝗮𝗿𝗲 𝗻𝗲𝘃𝗲𝗿 𝗮𝗳𝗳𝗲𝗰𝘁𝗲𝗱</i>"
+    f"<blockquote>🚷 <b>𝖡𝗅𝖺𝖼𝗄𝗅𝗂𝗌𝗍𝖾𝖽 𝖴𝗌𝖾𝗋𝗌</b></blockquote>\n\n"
+    f"𝖡𝗅𝖺𝖼𝗄𝗅𝗂𝗌𝗍𝖾𝖽 𝖴𝗌𝖾𝗋𝗌 𝖧𝖺𝗏𝖾 𝖠𝗅𝗅 𝖳𝗁𝖾𝗂𝗋 𝖬𝖾𝗌𝗌𝖺𝗀𝖾𝗌\n"
+    f"𝖣𝖾𝗅𝖾𝗍𝖾𝖽 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒 — 𝖳𝖾𝗑𝗍, 𝖬𝖾𝖽𝗂𝖺,\n"
+    f"𝖲𝗍𝗂𝖼𝗄𝖾𝗋𝗌, 𝖦𝗂𝖿'𝗌, 𝖤𝗏𝖾𝗋𝗒𝗍𝗁𝗂𝗇𝗀.\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/blackuser &lt;userid&gt;</code> — 𝖠𝖽𝖽 𝖴𝗌𝖾𝗋 𝖳𝗈 𝖡𝗅𝖺𝖼𝗄𝗅𝗂𝗌𝗍\n"
+    f"➻ <code>/rmblackuser &lt;userid&gt;</code> — 𝖱𝖾𝗆𝗈𝗏𝖾 𝖥𝗋𝗈𝗆 𝖡𝗅𝖺𝖼𝗄𝗅𝗂𝗌𝗍\n"
+    f"➻ <code>/blacklistusers</code> — 𝖲𝖾𝖾 𝖠𝗅𝗅 𝖡𝗅𝖺𝖼𝗄𝗅𝗂𝗌𝗍𝖾𝖽 𝖴𝗌𝖾𝗋𝗌\n\n"
+    f"<i>👮 𝖮𝗇𝗅𝗒 𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝖺𝗇 𝖢𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖾 𝖳𝗁𝗂𝗌</i>\n"
+    f"<i>𝖠𝖽𝗆𝗂𝗇𝗌 𝖠𝗋𝖾 𝖭𝖾𝗏𝖾𝗋 𝖠𝖿𝖿𝖾𝖼𝗍𝖾𝖽</i>"
 )
-
 
 def register_blackuser_handler(app: Client):
 
