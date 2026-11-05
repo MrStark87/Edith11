@@ -14,8 +14,8 @@ import db
 logger = logging.getLogger(__name__)
 
 # ── Groq API ────────────────────────────────────────────────
-GROQ_URL    = ""
-DEFAULT_MODEL = ""
+GROQ_URL    = "https://api.groq.com/openai/v1"
+DEFAULT_MODEL = "openai/gpt-oss-20b"
 
 SYSTEM_PROMPT = (
     "Tumhara naam Edith hai. Tum Mr. Stark dwara banaya gaya ek AI assistant ho. "
