@@ -13,25 +13,21 @@ import asyncio
 logger = logging.getLogger(__name__)
 
 FORWARD_HELP_TEXT = (
-    "╔══════════════════╗\n"
-    "  ↩️ 𝗳𝗼𝗿𝘄𝗮𝗿𝗱 𝗽𝗿𝗼𝘁𝗲𝗰𝘁𝗶𝗼𝗻\n"
-    "╚══════════════════╝\n\n"
-    "❖ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 ❖\n\n"
-    "➻ /forwarding 𝗼𝗻 — 𝗮𝗹𝗹𝗼𝘄 𝗳𝗼𝗿𝘄𝗮𝗿𝗱𝘀 ✅\n"
-    "➻ /forwarding 𝗼𝗳𝗳 — 𝗯𝗹𝗼𝗰𝗸 𝗳𝗼𝗿𝘄𝗮𝗿𝗱𝘀 ❌\n\n"
-    "❖ 𝗵𝗼𝘄 𝗶𝘁 𝘄𝗼𝗿𝗸𝘀 ❖\n"
-    "➻ 𝗼𝗻: 𝗮𝗹𝗹 𝗳𝗼𝗿𝘄𝗮𝗿𝗱𝘀 𝗮𝗹𝗹𝗼𝘄𝗲𝗱\n"
-    "➻ 𝗼𝗳𝗳: 𝗳𝗼𝗿𝘄𝗮𝗿𝗱𝗲𝗱 𝗺𝘀𝗴 𝗱𝗲𝗹𝗲𝘁𝗲𝗱 + 𝘄𝗮𝗿𝗻\n"
-    "➻ 𝘄𝗮𝗿𝗻 𝗹𝗶𝗺𝗶𝘁 𝗿𝗲𝗮𝗰𝗵𝗲𝗱 → 𝗯𝗮𝗻/kick/mute\n"
+    f"<blockquote>↩️ <b>𝖥𝗈𝗋𝗐𝖺𝗋𝖽 𝖯𝗋𝗈𝗍𝖾𝖼𝗍𝗂𝗈𝗇</b></blockquote>\n\n"
+    f"<blockquote expandable>❖ <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b> ❖</blockquote>\n"
+    f"➻ <code>/forwarding on</code> — 𝖠𝗅𝗅𝗈𝗐 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝗌 ✅\n"
+    f"➻ <code>/forwarding off</code> — 𝖡𝗅𝗈𝖼𝗄 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝗌 ❌\n\n"
+    f"<blockquote expandable>❖ <b>𝖧𝗈𝗐 𝖨𝗍 𝖶𝗈𝗋𝗄𝗌</b> ❖</blockquote>\n"
+    f"➻ <b>𝖮𝗇:</b> 𝖠𝗅𝗅 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝗌 𝖠𝗅𝗅𝗈𝗐𝖾𝖽\n"
+    f"➻ <b>𝖮𝖿𝖿:</b> 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝖾𝖽 𝖬𝗌𝗀 𝖣𝖾𝗅𝖾𝗍𝖾𝖽 + 𝖶𝖺𝗋𝗇\n"
+    f"➻ 𝖶𝖺𝗋𝗇 𝖫𝗂𝗆𝗂𝗍 𝖱𝖾𝖺𝖼𝗁𝖾𝖽 → 𝖡𝖺𝗇/𝖪𝗂𝖼𝗄/𝖬𝗎𝗍𝖾"
 )
-
 
 
 FORWARD_TEXT = (
-    "➻ /forwarding 𝗼𝗻 — 𝗮𝗹𝗹𝗼𝘄 𝗳𝗼𝗿𝘄𝗮𝗿𝗱𝘀 ✅\n"
-    "➻ /forwarding 𝗼𝗳𝗳 — 𝗯𝗹𝗼𝗰𝗸 𝗳𝗼𝗿𝘄𝗮𝗿𝗱𝘀 ❌\n\n"
+    f"➻ <code>/forwarding on</code> — 𝖠𝗅𝗅𝗈𝗐 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝗌 ✅\n"
+    f"➻ <code>/forwarding off</code> — 𝖡𝗅𝗈𝖼𝗄 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝗌 ❌\n\n"
 )
-
 
 async def is_power(client, chat_id: int, user_id: int) -> bool:
     try:
