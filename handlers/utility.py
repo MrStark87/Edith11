@@ -133,7 +133,7 @@ def register_utility_handler(app: Client):
     # ----------------------------------------------------------
     # /ping [NEW]
     # ----------------------------------------------------------
-    @app.on_message(filters.command("ping"))
+    @app.on_message(filters.command("ping") & (filters.private | filters.group))
     async def ping_cmd(client, message: Message):
         start_time = time.time()
         # Pehle message bhejenge latency calculate karne ke liye
