@@ -8,9 +8,14 @@ from pyrogram.enums import ButtonStyle
 from pyrogram.types import Message, ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ChatMemberStatus
 from datetime import datetime
+import os
+import pytz
 import asyncio
 import logging
 import db
+
+# Real-time zone (Google par jo time dikhta hai). Badalna ho to .env mein BOT_TIMEZONE set karo.
+BOT_TZ = pytz.timezone(os.getenv("BOT_TIMEZONE", "Asia/Kolkata"))
 
 logger = logging.getLogger(__name__)
 
@@ -90,7 +95,6 @@ AUTOLOCK_HELP_TEXT = (
     f"𝖢𝗅𝗈𝖼𝗄 — 𝖭𝗈𝗍 𝖸𝗈𝗎𝗋 𝖫𝗈𝖼𝖺𝗅 𝖳𝗂𝗆𝖾𝗓𝗈𝗇𝖾.</i>\n\n"
     f"<i>👮 𝖮𝗇𝗅𝗒 𝖠𝖽𝗆𝗂𝗇𝗌 𝖢𝖺𝗇 𝖢𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖾 𝖳𝗁𝗂𝗌.</i>"
 )
-
 
 def register_autolock_handler(app: Client):
 
@@ -241,7 +245,7 @@ def register_autolock_handler(app: Client):
         
         while True:
             try:
-                now = datetime.now()
+                now = datetime.now(BOT_TZ)
                 today_str = now.strftime("%Y-%m-%d")
 
                 # Har minute database check karega
@@ -297,3 +301,4 @@ def register_autolock_handler(app: Client):
     # Yeh task ab Pyrogram ke active loop ke saath properly attach ho jayega
     loop = asyncio.get_event_loop()
     loop.create_task(_scheduler_loop())
+        
