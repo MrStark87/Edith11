@@ -34,9 +34,11 @@ from handlers.disable import register_disable_handler
 from handlers.logger import register_logger_handler
 from handlers.approve import register_approve_handler
 from handlers.groupinfo import register_groupinfo_handler
+from handlers.help_menu import register_help_menu
 
 
 def register_all_handlers(app):
+    register_help_menu(app)
     register_handlers(app)
     register_group_commands(app)
     register_notes_handler(app)
