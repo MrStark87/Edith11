@@ -209,56 +209,54 @@ def register_handlers(app: Client):
     # ==========================================================
     # Help Menu — Paginated
     # ==========================================================
-
     CATEGORY_MODERATION = [
-        ("🔮 𝖬𝗈𝖽𝗋𝖺𝗍𝗂𝗈𝗇 ⌯",     "moderation"),
-        ("⚠️ 𝖶𝖺𝗋𝗇𝗌 ⌯",             "warns_help"),
-        ("🚷 𝖡𝗅 𝖴𝗌𝖾𝗋 ⌯",           "blackuser_help"),
-        ("🚫 𝖡𝗅 𝖶𝗈𝗋𝖽𝗌 ⌯",          "blacklist_help"),
-        ("🤬 𝖠𝖻𝗎𝗌𝖾 ⌯",              "abuse_help"),
-        ("🗑️ 𝖢𝗆𝖽 𝖣𝖾𝗅 ⌯",           "cmd_help"),
-        ("🚮 𝖬𝖾𝖽𝗂𝖺 𝖣𝖾𝗅 ⌯",         "mediadelete_help"),
-        ("🆘 𝖠𝖽𝗆𝗂𝗇 ⌯",              "admin_tag_help"),
-        ("👮🏻 𝖯𝗋𝗈𝗆𝗈𝗍𝗂𝗈𝗇 ⌯",        "promote_help"),
-        ("⌛ 𝖫𝗈𝗇𝗀 𝖫𝗂𝗆𝗂𝗍 ⌯",        "longmsg_help"),
-        ("#️⃣ 𝖧𝖺𝗌𝗁𝗍𝖺𝗀 ⌯",           "hashtag_help"),
+        ("🔮 𝐌ᴏᴅʀᴀᴛɪᴏɴ ⌯",     "moderation"),
+        ("⚠️ 𝐖ᴀʀɴs ⌯",             "warns_help"),
+        ("🚷 𝐁ʟ 𝐔sᴇʀ ⌯",           "blackuser_help"),
+        ("🚫 𝐁ʟ 𝐖ᴏʀᴅs ⌯",          "blacklist_help"),
+        ("🤬 𝐀ʙᴜsᴇ ⌯",              "abuse_help"),
+        ("🗑️ 𝐂ᴍᴅ 𝐃ᴇʟ ⌯",           "cmd_help"),
+        ("🚮 𝐌ᴇᴅɪᴀ 𝐃ᴇʟ ⌯",         "mediadelete_help"),
+        ("🆘 𝐀ᴅᴍɪɴ ⌯",              "admin_tag_help"),
+        ("👮🏻 𝐏ʀᴏᴍᴏᴛɪᴏɴ ⌯",        "promote_help"),
+        ("⌛ 𝐋ᴏɴɢ 𝐋ɪᴍɪᴛ ⌯",        "longmsg_help"),
+        ("#️⃣ 𝐇ᴀsʜᴛᴀɢ ⌯",           "hashtag_help"),
     ]
 
     CATEGORY_SECURITY = [
-        ("🔐 𝖫𝗈𝖼𝗄𝗌 ⌯",             "locks"),
-        ("🕐 𝖠𝗎𝗍𝗈 𝖫𝗈𝖼𝗄",             "autolock_help"),
-        ("🔡 𝖢𝖺𝗉𝗍𝖼𝗁𝖺 ⌯",            "captcha_help"),
-        ("〽️ 𝖡𝗂𝗈 𝖫𝗂𝗇𝗄 ⌯",           "biolink"),
-        ("🔗 𝖠𝗇𝗍𝗂 𝖫𝗂𝗇𝗄 ⌯",          "anti_link_help"),
-        ("🪠 𝖥-𝖲𝗎𝖻 ⌯",               "fsub_help"),
-        ("🧴 𝖢𝗅𝖾𝖺𝗇𝖾𝗋 ⌯",            "cleaner_help"),
-        ("📵 𝖯𝗁𝗈𝗇𝖾 ⌯",               "phone_help"),
-        ("🎭 𝖠𝗇𝗍𝗂 𝖲𝗍𝗂𝖼𝗄𝖾𝗋 ⌯",      "anti_sticker_help"),
-        ("🧟 𝖹𝗈𝗆𝖻𝗂𝖾𝗌 ⌯",            "zombie_help"),
-        ("👻 𝖦𝗁𝗈𝗌𝗍 ⌯",               "ghost_help"),
-        ("🤿 𝖥𝗂𝗅𝗍𝖾𝗋𝗌 ⌯",             "filters_help"),
-        ("⛩️ 𝖩𝗈𝗂𝗇 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 ⌯",      "joinrequest_help"),
-        ("🛡️ 𝖠𝗇𝗍𝗂 𝖱𝖺𝗂𝖽 ⌯",          "antiraid_help"),
-        ("🌊 𝖠𝗇𝗍𝗂 𝖥𝗅𝗈𝗈𝖽 ⌯",         "antiflood_help"),
-        ("⚙️ 𝖣𝗂𝗌𝖺𝖻𝗅𝖾",               "disable_help"),
-        ("🪭 𝖥𝖺𝗇𝖼𝗒 𝖳𝖾𝗑𝗍 ⌯",         "fancy_text_help"),
-    ]
-    
-    CATEGORY_UTILITY = [
-        ("💌 𝖦𝗋𝖾𝖾𝗍𝗂𝗇𝗀𝗌 ⌯",     "greetings"),
-        ("📝 𝖭𝗈𝗍𝖾𝗌 ⌯",              "notes_help"),
-        ("📑 𝖱𝗎𝗅𝖾𝗌 ⌯",              "rules_help"),
-        ("⚙️ 𝖴𝗍𝗂𝗅𝗂𝗍𝗒 ⌯",           "utility_help"),
-        ("🔖 𝖳𝖺𝗀 𝖠𝗅𝗅 ⌯",            "tagall_help"),
-        ("🕊 𝖠𝗉𝗉𝗋𝗈𝗏𝖾",              "approve_help"),
-        ("📤 𝖥𝗈𝗋𝗐𝖺𝗋𝖽 ⌯",            "forward_help"),
-        ("🤖 𝖤𝖽𝗂𝗍𝗁 𝖠𝖨 ⌯",           "ai_help"),
+        ("🔐 𝐋ᴏᴄᴋs ⌯",             "locks"),
+        ("🕐 𝐀ᴜᴛᴏ 𝐋ᴏᴄᴋ",             "autolock_help"),
+        ("🔡 𝐂ᴀᴘᴛᴄʜᴀ ⌯",            "captcha_help"),
+        ("〽️ 𝐁ɪᴏ 𝐋ɪɴᴋ ⌯",           "biolink"),
+        ("🔗 𝐀ɴᴛɪ 𝐋ɪɴᴋ ⌯",          "anti_link_help"),
+        ("🪠 𝐅-𝐒ᴜʙ ⌯",               "fsub_help"),
+        ("🧴 𝐂ʟᴇᴀɴᴇʀ ⌯",            "cleaner_help"),
+        ("📵 𝐏ʜᴏɴᴇ ⌯",               "phone_help"),
+        ("🎭 𝐀ɴᴛɪ 𝐒ᴛɪᴄᴋᴇʀ ⌯",      "anti_sticker_help"),
+        ("🧟 𝐙ᴏᴍʙɪᴇs ⌯",            "zombie_help"),
+        ("👻 𝐆ʜᴏsᴛ ⌯",               "ghost_help"),
+        ("🤿 𝐅ɪʟᴛᴇʀs ⌯",             "filters_help"),
+        ("⛩️ 𝐉ᴏɪɴ 𝐑ᴇǫᴜᴇsᴛ ⌯",      "joinrequest_help"),
+        ("🛡️ 𝐀ɴᴛɪ 𝐑ᴀɪᴅ ⌯",          "antiraid_help"),
+        ("🌊 𝐀ɴᴛɪ 𝐅ʟᴏᴏᴅ ⌯",         "antiflood_help"),
+        ("⚙️ 𝐃ɪsᴀʙʟᴇ",               "disable_help"),
+        ("🪭 𝐅ᴀɴᴄʏ 𝐓ᴇxᴛ ⌯",         "fancy_text_help"),
     ]
 
-    
+    CATEGORY_UTILITY = [
+        ("💌 𝐆ʀᴇᴇᴛɪɴɢs ⌯",     "greetings"),
+        ("📝 𝐍ᴏᴛᴇs ⌯",              "notes_help"),
+        ("📑 𝐑ᴜʟᴇs ⌯",              "rules_help"),
+        ("⚙️ 𝐔ᴛɪʟɪᴛʏ ⌯",           "utility_help"),
+        ("🔖 𝐓ᴀɢ 𝐀ʟʟ ⌯",            "tagall_help"),
+        ("🕊 𝐀ᴘᴘʀᴏᴠᴇ",              "approve_help"),
+        ("📤 𝐅ᴏʀᴡᴀʀᴅ ⌯",            "forward_help"),
+        ("🤖 𝐄ᴅɪᴛʜ 𝐀ɪ ⌯",           "ai_help"),
+    ]
+
     CATEGORY_GROUPS = [
-        ("👥 𝖦𝗋𝗈𝗎𝗉 ⌯",          "groupinfo_help"),
-        ("🔗 𝖨𝗇𝗏𝗂𝗍𝖾 𝖫𝗂𝗇𝗄 ⌯",    "linkinfo_help"),
+        ("👥 𝐆ʀᴏᴜᴘ ⌯",          "groupinfo_help"),
+        ("🔗 𝐈ɴᴠɪᴛᴇ 𝐋ɪɴᴋ ⌯",    "linkinfo_help"),
     ]
     
     # Saare buttons ek hi list mein (koi category nahi)
