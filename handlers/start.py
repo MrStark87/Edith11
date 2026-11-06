@@ -30,12 +30,14 @@ def register_handlers(app: Client):
             f"<blockquote expandable><b>𝐌ʏ ɴᴀᴍᴇ ɪs <a href='https://t.me/EdithHelpsBot'>𝐄ᴅɪᴛʜ 🤖</a>. 𝐈'ᴍ ᴀ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs. \n\n⇩ 𝐍ᴇᴇᴅ ʜᴇʟᴘ? ᴜsᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴏʀ sᴇɴᴅ</b> /help</blockquote>"
         )
         buttons = InlineKeyboardMarkup([
-            [InlineKeyboardButton("✙ 𝖠𝖽𝖽 𝖬𝖾 𝖨𝗇 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ✙", url=f"https://t.me/{BOT_USERNAME}?startgroup=true", style=ButtonStyle.PRIMARY)],
             [
-                InlineKeyboardButton("⌯ 𝖲𝗎𝗉𝗉𝗈𝗋𝗍 ⌯", url=SUPPORT_GROUP, style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton("⌯ 𝖴𝗉𝖽𝖺𝗍𝖾 ⌯", url=UPDATE_CHANNEL, style=ButtonStyle.SUCCESS),
+                [InlineKeyboardButton("𝐂ommands ❓", callback_data="help", style=ButtonStyle.DEFAULT)],
+                [InlineKeyboardButton("𝐒ource 🛠️", url=f"https://t.me/CoderxStark", style=ButtonStyle.DEFAULT)]
+            [
+                InlineKeyboardButton("𝐒upport ", url=SUPPORT_GROUP, style=ButtonStyle.DEFAULT),
+                InlineKeyboardButton("𝐔pdate 📢", url=UPDATE_CHANNEL, style=ButtonStyle.DEFAULT),
             ],
-            [InlineKeyboardButton("⌯ 𝖧𝖾𝗅𝗉𝗌 𝖺𝗇𝖽 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 ⌯", callback_data="help", style=ButtonStyle.PRIMARY)]
+            [InlineKeyboardButton("𝐀dd me in your group 🎉", url=f"https://t.me/{BOT_USERNAME}?startgroup=true", style=ButtonStyle.DANGER)]
         ])
 
         if message.text and not (message.from_user and message.from_user.is_bot):
@@ -297,9 +299,11 @@ def register_handlers(app: Client):
         ])
 
         text = (
+            "<blockquote>
             "❖ 𝖢𝗁𝗈𝗈𝗌𝖾 𝖺 𝗆𝗈𝖽𝗎𝗅𝖾 𝖿𝗈𝗋 𝗐𝗁𝗂𝖼𝗁 𝗒𝗈𝗎 𝗐𝖺𝗇𝗇𝖺 𝗀𝖾𝗍 𝗁𝖾𝗅𝗉\n\n"
             "➥ 𝖠𝗌𝗄 𝗒𝗈𝗎𝗋 𝖽𝗈𝗎𝖻𝗍𝗌 𝖺𝗍 <a href='https://t.me/CarelessxWorld'>𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖢𝗁𝖺𝗍</a>\n"
             "𝖠𝗅𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌 𝖼𝖺𝗇 𝖻𝖾 𝗎𝗌𝖾𝖽 𝗐𝗂𝗍𝗁 :<code>/</code>"
+            "</blockquote>"
         )
         return text, InlineKeyboardMarkup(rows)
 
