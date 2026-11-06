@@ -269,7 +269,7 @@ def register_handlers(app: Client):
 
     ECO_CATEGORIES = {"all": ALL_BUTTONS}
 
-    BUTTONS_PER_PAGE = 40  # sab buttons ek hi page par
+    BUTTONS_PER_PAGE = 8  # 2 column x 4 row = 8 buttons per page
 
 
     def build_category_page(category: str, page: int):
@@ -291,6 +291,7 @@ def register_handlers(app: Client):
             nav = []
             if page > 0:
                 nav.append(InlineKeyboardButton("« 𝖯𝗋𝖾𝗏", callback_data=f"help_cat|{category}|{page - 1}", style=ButtonStyle.SUCCESS))
+            nav.append(InlineKeyboardButton(f"{page + 1}/{total_pages}", callback_data="noop", style=ButtonStyle.DEFAULT))
             if page < total_pages - 1:
                 nav.append(InlineKeyboardButton("𝖭𝖾𝗑𝗍 »", callback_data=f"help_cat|{category}|{page + 1}", style=ButtonStyle.SUCCESS))
             rows.append(nav)
@@ -332,7 +333,7 @@ def register_handlers(app: Client):
             InlineKeyboardButton("🏠 𝖧𝗈𝗆𝖾", callback_data="back_to_start", style=ButtonStyle.DANGER),
         ]])
 
-
+    
     # ==========================================================
     # Core navigation callbacks
     # ==========================================================
